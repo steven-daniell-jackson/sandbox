@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+    <link href="../plugin/style.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="jquery-1.6.1.min.js"></script>
+    <script type="text/javascript" src="../plugin/ttw-simple-notifications-min.js"></script>
+
+    <style type="text/css">
+        html {
+            background: url(images/bg.jpg) repeat center center fixed;
+            box-shadow:inset 0 0 300px rgba(0, 0, 0, .1);
+            -webkit-box-shadow:inset 0 0 300px rgba(0, 0, 0, .1);
+            -moz-box-shadow:inset 0 0 300px rgba(0, 0, 0, .1);
+            height:100%;
+            width:100%;
+        }
+
+        #title{
+            margin:100px auto 0 auto;
+            width:764px;
+            height:122px;
+        }
+
+        #download{
+            background: transparent url(images/download.png) no-repeat 0 0 scroll;
+            width:156px;
+            height:59px;
+            display:block;
+            margin:30px auto;
+            text-indent:-999999px;
+        }
+    </style>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var notifications = $('body').ttwSimpleNotifications(),
+            msgs = [
+                'These CSS3 notifications don\'t use any images.',
+                'This lightweight plugin has a simple, but very useful API',
+                'These notifications are extremely easy to integrate into any project',
+                'Feel free to shoot me an email if there are any specific freebies you would like on this site'
+            ];
+
+            notifications.show({msg:'<a href="http://www.codebasehero.com" target="_blank">Codebase Hero</a> rocks my socks off. This notification will auto close in 6 seconds', autoHideDelay:6000});
+
+            setTimeout(function() {
+                notifications.show({msg:'Just a random notification', icon:'images/icon.png'});
+            }, 13000);
+
+            setTimeout(function() {
+                notifications.show({msg:'Make sure to bookmark <a href="http://www.codebasehero.com" target="_blank">Codebase Hero</a> and check back often', icon:'images/icon.png', autoHide:false});
+
+                setTimeout(function() {
+                    notifications.show({msg:'Don\'t forget to check out my <a href="http://codecanyon.net/user/23andwalnut/portfolio" target="_blank">Premium Files</a>', icon:'images/icon.png', autoHide:false});
+
+                }, 5000);
+            }, 2000);
+
+            var i = 0;
+            setInterval(function(){
+                notifications.show({msg:msgs[i], icon:'images/icon.png'});
+                i++;
+
+                if(i >= msgs.length)
+                    i=0;
+            }, 8000);
+        });
+    </script>
+</head>
+<body>
+<div id="title"><img src="images/title.png"/></div>
+<a id="download" href="index.html#">Download</a>
+
+</body>
+</html>

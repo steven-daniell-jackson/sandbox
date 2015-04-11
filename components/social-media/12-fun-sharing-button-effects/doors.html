@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>12 Fun Sharing Button Effects</title>
+
+	<link rel="stylesheet" href="./assets/css/demo.css">
+
+	<style>
+
+		.image-overlay{
+			margin: 30px auto;
+			position: relative;
+			width: 650px;
+			background-color: transparent;
+			overflow: hidden;
+			z-index: 20;
+		}
+
+
+		.image-effect-doors{
+			width: 500px;
+			height: 300px;
+			position: relative;
+			margin: 0 auto;
+			background-color: #fff;
+		}
+
+
+		.image-effect-doors .image-left,
+		.image-effect-doors .image-right{
+			display: inline-block;
+			position: absolute;
+			width: 250px;
+			height: 300px;
+			overflow: hidden;
+			transition:  0.4s ease;
+			z-index: 10;
+		}
+
+
+		.image-effect-doors .image-left{
+			left: 0;
+			top:0;
+		}
+
+		.image-effect-doors:hover .image-left{
+			opacity: 0.4;
+			transform: translateX(-250px);
+			-webkit-transform: translateX(-250px);
+		}
+
+
+		.image-effect-doors .image-right{
+			left:250px;
+			top: 0;
+		}
+
+		.image-effect-doors:hover .image-right{
+			opacity: 0.4;
+			transform: translateX(250px);
+			-webkit-transform: translateX(250px);
+		}
+
+		.image-effect-doors .image-right img{
+			margin-left: -250px;
+		}
+
+		.share-button{
+			display: inline-block;
+			text-decoration: none;
+			color: #ffffff;
+			padding: 12px;
+			width: 80px;
+			border-radius: 2px;
+			margin:	125px 10px;
+		}
+
+		.share-via-facebook{
+			background-color:#3b5998;
+		}
+
+		.share-via-twitter{
+			background-color:#00aced;
+		}
+
+		.share-via-google{
+			background-color:#d34836;
+		}
+
+	</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+	<div class="dropdown">
+
+		<span>Choose a Demo</span>
+
+		<ul class="button-effects-list">
+
+			<li><a href="index.html">Fall Back</a></li>
+			<li><a href="paper-flip.html">Paper Flip</a></li>
+			<li><a href="rumble.html">Rumble</a></li>
+			<li><a href="3d-doors.html">Doors 3D</a></li>
+			<li><a href="circles.html">Circles</a></li>
+			<li><a href="rotation.html">Rotation</a></li>
+			<li><a href="simple.html">Simple</a></li>
+			<li><a href="doors.html" class="active">Doors</a></li>
+			<li><a href="zoom.html">Zoom</a></li>
+			<li><a href="border.html">Border</a></li>
+			<li><a href="future.html">Future</a></li>
+			<li><a href="pop-ups.html">Pop Ups</a></li>
+
+		</ul>
+
+	</div>
+
+
+	<div class="image-overlay">
+
+		<div class="image-effect-doors">
+			<a href="#" class="share-button share-via-facebook">
+				<i class="fa fa-facebook"></i>
+				Facebook
+			</a>
+
+			<a href="#" class="share-button share-via-twitter">
+				<i class="fa fa-twitter"></i>
+				Twitter
+			</a>
+
+			<a href="#" class="share-button share-via-google">
+				<i class="fa fa-google"></i>
+				Google +
+			</a>
+
+			<div class="image-left">
+				<img src="assets/pictures/books.jpg" width="500" alt="Endurance">
+			</div>
+			<div class="image-right">
+				<img src="assets/pictures/books.jpg" width="500" alt="Endurance">
+			</div>
+		</div>
+
+	</div>
+
+
+</div>
+
+	<footer>
+		<a class="tz" href="http://tutorialzine.com/2014/11/12-fun-sharing-button-effects/">12 Fun Sharing Button Effects</a>
+		<div id="tzine-actions"></div>
+		<span class="close">✕</span>
+	</footer>
+
+	<!-- Demo ads. Please ignore and remove. -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="http://cdn.tutorialzine.com/misc/enhance/v2.js" async></script>
+
+
+</body>
+
+</html>

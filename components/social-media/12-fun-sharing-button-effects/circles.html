@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>12 Fun Sharing Button Effects</title>
+
+	<link rel="stylesheet" href="./assets/css/demo.css">
+	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<style>
+
+		.image-effect-circle{
+			width: 500px;
+			height: 300px;
+			overflow: hidden;
+			position: relative;
+			margin: 0 auto;
+			background-color: rgba(0,0,0,0.2);
+		}
+
+
+		.image-effect-circle img{
+			position: absolute;
+			left: 0;
+			top:0;
+
+			-webkit-transition: 0.4s 1s;
+			transition: 0.4s 1s;
+			-webkit-transform: scale(1.1);
+			transform: scale(1.1);
+		}
+
+		.image-effect-circle:hover img{
+			-webkit-filter: blur(1px) saturate(2.5);
+			-webkit-transform: scale(1);
+			transform: scale(1);
+			-webkit-transition-delay: 0s;
+			transition-delay: 0s;
+		}
+
+
+		.image-effect-circle .share-layer{
+			width: 400px;
+			height: 400px;
+			border-radius: 50%;
+			left:50px;
+			top:300px;
+			position: absolute;
+			background-color: rgba(255,255,255, 0.8);
+			-webkit-transition: 0.4s 1s;
+			transition: 0.4s 1s;
+			z-index: 1;
+		}
+
+		.image-effect-circle:hover .share-layer{
+			-webkit-transition-delay: 0s;
+			transition-delay: 0s;
+			transform: translateY(-350px);
+			-webkit-transform: translateY(-350px);
+		}
+
+
+		.image-effect-circle .share-button {
+			position: absolute;
+			display: block;
+			width: 70px;
+			height: 70px;
+			border-radius: 50%;
+
+			text-decoration: none;
+			color: #ffffff;
+			line-height: 70px;
+			font-size: 32px;
+			text-align: center;
+
+			left: 50%;
+			margin-left: -25px;
+			top: 50%;
+			margin-top: -25px;
+			opacity: 0;
+		}
+
+		.image-effect-circle .share-via-facebook{
+			-webkit-transition: 0.4s 0.6s;
+			transition: 0.4s 0.6s;
+			background-color:#3b5998;
+		}
+
+		.image-effect-circle .share-via-twitter{
+			-webkit-transition: 0.4s 0.4s;
+			transition: 0.4s 0.4s;
+			background-color:#00aced;
+		}
+
+		.image-effect-circle .share-via-google{
+			-webkit-transition: 0.4s 0.2s;
+			transition: 0.4s 0.2s;
+			background-color:#d34836;
+		}
+
+		.image-effect-circle:hover .share-via-facebook {
+			-webkit-transition: 0.4s 0.4s;
+			transition: 0.4s 0.4s;
+
+			-webkit-transform: translate(-80px, -60px);
+			transform: translate(-80px, -60px);
+
+			opacity: 1;
+		}
+
+		.image-effect-circle:hover .share-via-twitter {
+			-webkit-transition: 0.4s 0.6s;
+			transition: 0.4s 0.6s;
+
+			-webkit-transform: translate(80px, -60px);
+			transform: translate(80px, -60px);
+
+			opacity: 1;
+		}
+
+		.image-effect-circle:hover .share-via-google {
+			-webkit-transition: 0.4s 0.8s;
+			transition: 0.4s 0.8s;
+
+			-webkit-transform: translate(0, 60px);
+			transform: translate(0, 60px);
+
+			opacity: 1;
+		}
+
+	</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+	<div class="dropdown">
+
+		<span>Choose a Demo</span>
+
+		<ul class="button-effects-list">
+
+			<li><a href="index.html">Fall Back</a></li>
+			<li><a href="paper-flip.html">Paper Flip</a></li>
+			<li><a href="rumble.html">Rumble</a></li>
+			<li><a href="3d-doors.html">Doors 3D</a></li>
+			<li><a href="circles.html" class="active">Circles</a></li>
+			<li><a href="rotation.html">Rotation</a></li>
+			<li><a href="simple.html">Simple</a></li>
+			<li><a href="doors.html">Doors</a></li>
+			<li><a href="zoom.html">Zoom</a></li>
+			<li><a href="border.html">Border</a></li>
+			<li><a href="future.html">Future</a></li>
+			<li><a href="pop-ups.html">Pop Ups</a></li>
+
+		</ul>
+
+	</div>
+
+	<div class="image-effect-circle">
+
+		<img src="assets/pictures/surf.jpg" width="500" alt="California surf">
+
+		<div class="share-layer">
+			<a href="#" class="share-button share-via-facebook">
+				<i class="fa fa-facebook"></i>
+			</a>
+
+			<a href="#" class="share-button share-via-twitter">
+				<i class="fa fa-twitter"></i>
+			</a>
+
+			<a href="#" class="share-button share-via-google">
+				<i class="fa fa-google"></i>
+			</a>
+		</div>
+
+	</div>
+
+</div>
+
+	<footer>
+		<a class="tz" href="http://tutorialzine.com/2014/11/12-fun-sharing-button-effects/">12 Fun Sharing Button Effects</a>
+		<div id="tzine-actions"></div>
+		<span class="close">✕</span>
+	</footer>
+
+	<!-- Demo ads. Please ignore and remove. -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="http://cdn.tutorialzine.com/misc/enhance/v2.js" async></script>
+
+
+</body>
+
+</html>

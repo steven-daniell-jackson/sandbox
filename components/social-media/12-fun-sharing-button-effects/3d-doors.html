@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>12 Fun Sharing Button Effects</title>
+
+	<link rel="stylesheet" href="./assets/css/demo.css">
+
+	<style>
+
+		.image-effect-3d-doors{
+			width: 500px;
+			height: 300px;
+			position: relative;
+			margin: 0 auto;
+
+			-webkit-perspective: 500px;
+			perspective: 500px;
+		}
+
+
+		.back-image{
+			position: absolute;
+
+			left: 0;
+			top:0;
+
+			-webkit-filter: blur(1px) grayscale(100%);
+			width: 100%;
+			height: 300px;
+			overflow: hidden;
+
+			-webkit-transition: 0.7s;
+			transition: 0.7s;
+			-webkit-transform: scale(1.07);
+			transform: scale(1.07);
+
+		}
+
+		.image-effect-3d-doors:hover .back-image{
+			box-shadow: none;
+			-webkit-transform: scale(1);
+			transform: scale(1);
+		}
+
+
+		.image-effect-3d-doors .left-door{
+			position: absolute;
+			display: inline-block;
+
+			left: 0;
+			top:0;
+
+			-webkit-transform-origin: center left;
+			transform-origin: center left;
+			-webkit-transition: 0.7s ease-out;
+			transition: 0.7s ease-out;
+			z-index: 10;
+		}
+
+
+		.image-effect-3d-doors:hover .left-door{
+			-webkit-transform: rotateY(-180deg) scale3d(0.6, 1, 100);
+			transform: rotateY(-180deg) scale3d(0.6, 1, 100);
+		}
+
+
+		.image-effect-3d-doors .right-door{
+			position: absolute;
+			display: inline-block;
+
+			left: 250px;
+			top:0;
+
+			-webkit-transform-origin: center right;
+			transform-origin: center right;
+			-webkit-transition: 0.7s ease-out;
+			transition: 0.7s ease-out;
+			z-index: 10;
+		}
+
+		.image-effect-3d-doors:hover .right-door{
+			-webkit-transform: rotateY(180deg) scale3d(0.6, 1, 100);
+			transform: rotateY(180deg) scale3d(0.6, 1, 100);
+		}
+
+
+		.image-effect-3d-doors .image-left,
+		.image-effect-3d-doors .image-right{
+			width: 250px;
+			height: 300px;
+			overflow: hidden;
+			-webkit-transition: 0.7s;
+			transition: 0.7s;
+		}
+
+		.image-effect-3d-doors .image-right img{
+			margin-left: -250px;
+		}
+
+		.image-effect-3d-doors:hover .image-left,
+		.image-effect-3d-doors:hover .image-right{
+			-webkit-filter: blur(2px);
+		}
+
+
+		.image-effect-3d-doors .share-button{
+			display: inline-block;
+			text-decoration: none;
+			color: #ffffff;
+			padding: 12px;
+			width: 80px;
+			border-radius: 2px;
+			margin:	125px 10px;
+			position: relative;
+			z-index: 5;
+
+			-webkit-transition: 0.5s;
+			transition: 0.5s;
+			opacity: 0;
+		}
+
+		.image-effect-3d-doors:hover .share-button{
+			-webkit-transition-delay: 0.6s;
+			transition-delay: 0.6s;
+			opacity: 1;
+		}
+
+		.share-via-facebook{
+			background-color:#3b5998;
+		}
+
+		.share-via-twitter{
+			background-color:#00aced;
+		}
+
+		.share-via-google{
+			background-color:#d34836;
+		}
+
+
+		.image-effect-3d-doors .white-line{
+			border-bottom: 2px solid #fff;
+			top: 190px;
+			left:250px;
+			position: absolute;
+			z-index: 5;
+			width: 0;
+			-webkit-transition: 0.7s;
+			transition: 0.7s;
+		}
+
+		.image-effect-3d-doors:hover .white-line{
+			transform: translateX(-200px);
+			-webkit-transform: translateX(-200px);
+			width: 400px;
+			-webkit-transition-delay: 0s;
+			transition-delay: 0s;
+		}
+
+	</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+	<div class="dropdown">
+
+		<span>Choose a Demo</span>
+
+		<ul class="button-effects-list">
+
+			<li><a href="index.html">Fall Back</a></li>
+			<li><a href="paper-flip.html">Paper Flip</a></li>
+			<li><a href="rumble.html">Rumble</a></li>
+			<li><a href="3d-doors.html" class="active">Doors 3D</a></li>
+			<li><a href="circles.html">Circles</a></li>
+			<li><a href="rotation.html">Rotation</a></li>
+			<li><a href="simple.html">Simple</a></li>
+			<li><a href="doors.html">Doors</a></li>
+			<li><a href="zoom.html">Zoom</a></li>
+			<li><a href="border.html">Border</a></li>
+			<li><a href="future.html">Future</a></li>
+			<li><a href="pop-ups.html">Pop Ups</a></li>
+
+		</ul>
+
+	</div>
+
+	<div class="image-effect-3d-doors">
+
+		<div class="back-image">
+			<img src="assets/pictures/bridge.jpg" width="500" alt="California surf">
+		</div>
+
+		<a href="#" class="share-button share-via-facebook">
+			<i class="fa fa-facebook"></i>
+			Facebook
+		</a>
+
+		<a href="#" class="share-button share-via-twitter">
+			<i class="fa fa-twitter"></i>
+			Twitter
+		</a>
+
+		<a href="#" class="share-button share-via-google">
+			<i class="fa fa-google"></i>
+			Google +
+		</a>
+
+		<div class="white-line"></div>
+
+
+		<div class="left-door">
+			<div class="image-left">
+				<img src="assets/pictures/bridge.jpg" width="500" alt="California surf">
+			</div>
+		</div>
+
+		<div class="right-door">
+			<div class="image-right">
+				<img src="assets/pictures/bridge.jpg" width="500" alt="California surf">
+			</div>
+		</div>
+
+	</div>
+
+</div>
+
+	<footer>
+		<a class="tz" href="http://tutorialzine.com/2014/11/12-fun-sharing-button-effects/">12 Fun Sharing Button Effects</a>
+		<div id="tzine-actions"></div>
+		<span class="close">✕</span>
+	</footer>
+
+	<!-- Demo ads. Please ignore and remove. -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="http://cdn.tutorialzine.com/misc/enhance/v2.js" async></script>
+
+
+</body>
+
+</html>

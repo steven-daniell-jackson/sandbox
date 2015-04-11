@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>12 Fun Sharing Button Effects</title>
+
+	<link rel="stylesheet" href="./assets/css/demo.css">
+	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<style>
+
+		.image-effect-slide-pop-up{
+			width: 500px;
+			height: 300px;
+			overflow: hidden;
+			position: relative;
+			margin: 0 auto;
+			background-color: #fff;
+			box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+		}
+
+
+		.image-effect-slide-pop-up .image-layer{
+			position: absolute;
+			top:0;
+			left: 0;
+			height: 300px;
+			-webkit-transition: 0.4s 0.8s;
+			transition: 0.4s 0.8s;
+		}
+
+		.image-effect-slide-pop-up:hover .image-layer{
+			-webkit-transition: 0.4s 0s;
+			transition: 0.4s 0s;
+			-webkit-transform: translateY(250px);
+			transform: translateY(250px);
+		}
+
+		.image-effect-slide-pop-up .image-layer img{
+			position: relative;
+			z-index: 5;
+		}
+
+
+		.image-effect-slide-pop-up .share-button {
+			position: absolute;
+			display: block;
+			text-decoration: none;
+			color: #ffffff;
+			padding: 0;
+			width: 70px;
+			height: 70px;
+			border-radius: 50%;
+			margin-left: -35px;
+			line-height: 70px;
+			font-size: 32px;
+			text-align: center;
+			top: 10px;
+			opacity: 0;
+			z-index: 2;
+		}
+
+		.image-effect-slide-pop-up:hover .share-button {
+			opacity: 1;
+			
+			-webkit-transform: translateY(-150px);
+			transform: translateY(-150px);
+		}
+
+		.image-effect-slide-pop-up .share-via-facebook{
+			left: 30%;
+			background-color:#3b5998;
+
+			-webkit-transition: 0.4s 0.6s;
+			transition: 0.4s 0.6s;
+		}
+
+		.image-effect-slide-pop-up .share-via-twitter{
+			left: 50%;
+			background-color:#00aced;
+
+			-webkit-transition: 0.4s 0.6s;
+			transition: 0.4s 0.4s;
+		}
+
+		.image-effect-slide-pop-up .share-via-google{
+			left: 70%;
+			background-color:#d34836;
+
+			-webkit-transition: 0.4s 0.2s;
+			transition: 0.4s 0.2s;
+		}
+
+		.image-effect-slide-pop-up:hover .share-via-facebook {
+			-webkit-transition: 0.4s 0.2s;
+			transition: 0.4s 0.2s;
+		}
+
+		.image-effect-slide-pop-up:hover .share-via-twitter {
+			-webkit-transition: 0.4s 0.4s;
+			transition: 0.4s 0.4s;
+		}
+
+		.image-effect-slide-pop-up:hover .share-via-google {
+			-webkit-transition: 0.4s 0.6s;
+			transition: 0.4s 0.6s;
+		}
+
+
+	</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+	<div class="dropdown">
+
+		<span>Choose a Demo</span>
+
+		<ul class="button-effects-list">
+
+			<li><a href="index.html">Fall Back</a></li>
+			<li><a href="paper-flip.html">Paper Flip</a></li>
+			<li><a href="rumble.html">Rumble</a></li>
+			<li><a href="3d-doors.html">Doors 3D</a></li>
+			<li><a href="circles.html">Circles</a></li>
+			<li><a href="rotation.html">Rotation</a></li>
+			<li><a href="simple.html">Simple</a></li>
+			<li><a href="doors.html">Doors</a></li>
+			<li><a href="zoom.html">Zoom</a></li>
+			<li><a href="border.html">Border</a></li>
+			<li><a href="future.html">Future</a></li>
+			<li><a href="pop-ups.html" class="active">Pop Ups</a></li>
+
+		</ul>
+
+	</div>
+
+	<div class="image-effect-slide-pop-up">
+
+		<div class="image-layer">
+			<img src="assets/pictures/boats.jpg" width="500" alt="California surf">
+
+			<a href="#" class="share-button share-via-facebook">
+				<i class="fa fa-facebook"></i>
+			</a>
+
+			<a href="#" class="share-button share-via-twitter">
+				<i class="fa fa-twitter"></i>
+			</a>
+
+			<a href="#" class="share-button share-via-google">
+				<i class="fa fa-google"></i>
+			</a>
+		</div>
+
+	</div>
+
+</div>
+
+	<footer>
+		<a class="tz" href="http://tutorialzine.com/2014/11/12-fun-sharing-button-effects/">12 Fun Sharing Button Effects</a>
+		<div id="tzine-actions"></div>
+		<span class="close">✕</span>
+	</footer>
+
+	<!-- Demo ads. Please ignore and remove. -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="http://cdn.tutorialzine.com/misc/enhance/v2.js" async></script>
+
+</body>
+
+</html>
