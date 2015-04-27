@@ -1,0 +1,314 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>The landing-page for Iphone, Android & Smartphone Mobile Website Template | Home :: w3layouts</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Celestial Iphone web template, Andriod web template, Smartphone web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="smartphone/js/jquery.min.js"></script>
+		 <!-- Custom Theme files -->
+		<link href="smartphone/css/style.css" rel='stylesheet' type='text/css' />
+   		 <!-- Custom Theme files -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+		</script>
+		 <!---- start-smoth-scrolling---->
+		<script type="text/javascript" src="smartphone/js/move-top.js"></script>
+		<script type="text/javascript" src="smartphone/js/easing.js"></script>
+		
+		<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+				});
+			});
+		</script>
+		 <!---- start-smoth-scrolling---->
+		<!----- webfonts ------>
+		<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic|Open+Sans:300italic,600italic,400,300,600,700' rel='stylesheet' type='text/css'>
+		<!----- webfonts ------>
+		<!----start-top-nav-script---->
+		<script>
+			$(function() {
+				var pull 		= $('#pull');
+					menu 		= $('nav ul');
+					menuHeight	= menu.height();
+				$(pull).on('click', function(e) {
+					e.preventDefault();
+					menu.slideToggle();
+				});
+				$(window).resize(function(){
+	        		var w = $(window).width();
+	        		if(w > 320 && menu.is(':hidden')) {
+	        			menu.removeAttr('style');
+	        		}
+	    		});
+			});
+		</script>
+		<!----//End-top-nav-script---->
+	</head>
+	<body>
+	<!----- start-header---->
+		 <!----start-header---->
+ <div class="main-header">
+		<!----- start-header---->
+  <div id="home" class="header">
+	     <div class="wrap">
+			<div class="top-header">
+				  <div class="logo">
+					<a href="index.html"><img src="smartphone/images/logo.png" /></a>
+			    	</div>
+			    	          <nav class="nav">	        	
+					    	    <a href="#" id="w3-menu-trigger"> </a>
+					                  <ul class="nav-list">
+					            	        <li class="nav-item"><a class="active" href="index.html">Home</a></li>
+											<li class="nav-item"><a href="#about" class="scroll">About</a></li>
+											<li class="nav-item"><a href="#services" class="scroll">services</a></li>
+											<li class="nav-item"><a href="#portfolio" class="scroll">Portfolio</a></li>
+											<li class="nav-item"><a href="#portfolio" class="scroll">Team</a></li>
+											<li class="nav-item"><a href="#contact" class="scroll">Contact</a></li>
+					                 </ul>
+					                    <script src="smartphone/js/responsive.menu.js"></script>
+					             </nav>
+					 <div class="clear"> </div>
+			    </div>
+		  </div>
+	  </div><!----//End-header---->
+
+		<!----start-slider-script---->
+			<script src="smartphone/js/responsiveslides.min.js"></script>
+			 <script>
+			    // You can also use "$(window).load(function() {"
+			    $(function () {
+			      // Slideshow 4
+			      $("#slider4").responsiveSlides({
+			        auto: true,
+			        pager: true,
+			        nav: true,
+			        speed: 500,
+			        namespace: "callbacks",
+			        before: function () {
+			          $('.events').append("<li>before event fired.</li>");
+			        },
+			        after: function () {
+			          $('.events').append("<li>after event fired.</li>");
+			        }
+			      });
+			
+			    });
+			  </script>
+			<!----//End-slider-script---->
+			<!-- Slideshow 4 -->
+			    <div  id="top" class="callbacks_container">
+			      <ul class="rslides" id="slider4">
+			        <li>
+			        	<div class="tittle-head">
+			        		<h1>Simple landing page</h1>
+			          		<p>Just for you. </p>
+			          		<div class="learn-button">
+			          			<a class="slide-btn" href="#">Download now</a>
+			          		</div>
+			          	</div>
+			        </li>
+			        <li>
+			        <div class="tittle-head">
+			        		<h1>Lorem ipsum dolor</h1>
+			          		<p>Just for you. </p>
+			          		<div class="learn-button">
+			          			<a class="slide-btn" href="#">Download now</a>
+			          		</div>
+			          	</div>
+			        </li>
+			        <li>
+			         <div class="tittle-head">
+			        		<h1>Simple&pure design</h1>
+			          		<p>Just for you. </p>
+			          		<div class="learn-button">
+			          			<a class="slide-btn" href="#">Download now</a>
+			          		</div>
+			          	</div>
+			        </li>
+			      </ul>
+			    </div> 
+			   <div class="clear"> </div>
+			    </div>
+			<!----- //End-slider---->
+			<div id="about" class="about">
+				 <div class="wrap">
+					<div class="about-head">
+						<h3>About</h3>
+						<span>Who we are?</span>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+					</div>
+				</div>
+				
+			</div>
+			<!----- //End-about---->
+			<div id="services" class="services">
+       		 <div class="wrap">
+       		   <div class="gallery-head text-center">
+				  <h3>Services</h3>
+				  <p>What we do?.</p>
+			    </div>
+       			<div class="row text-center feature">
+       				<div class="col-md-4 service_grid">
+       					<i class="icon1"> </i>
+       					<h3>iOS Apps</h3>
+       					<p>Vestibulum odio risus, interdum fringilla vulputate.</p>
+       				</div>
+       				<div class="col-md-4 service_grid">
+       				<i class="icon2"> </i>
+       					<h3>Windows Apps</h3>
+       					<p>Vestibulum odio risus, interdum fringilla vulputate.</p>
+       				</div>
+       				<div class="col-md-4 service_grid">
+       					<i class="icon3"> </i>
+       					<h3>Android Apps</h3>
+       					<p>Vestibulum odio risus, interdum fringilla vulputate .</p>
+       				</div>
+       			</div>
+       			<div class="clear"> </div>
+       		</div>
+       	</div>
+	 <!---//End-services----->
+	 <div class="portfolio">
+	 	<div class="wrap">
+	 		<div class="potrfolio-head">
+		 		<h2>This .psd is absolutely free!</h2>
+				 <a class="prt-btn" href="#">Just download it!</a>
+			 </div>
+		</div>
+	</div>
+	<div class="clear"> </div>
+ 	<div id="portfolio" class="potrfolio-content">
+ 		<div class="wrap">
+ 			<div class="port-head">
+ 				<h3>Portfolio</h3>
+ 				<p>Our work </p>
+ 			</div>
+			 	<div id="portfoliolist">
+						<div class="portfolio-grids">	
+								<img src="smartphone/images/p-2.png" />
+						</div>
+						<div class="portfolio-grids">
+								<img src="smartphone/images/p-3.png" />
+						</div>
+						<div class="portfolio-grids">
+							 <img src="smartphone/images/p-4.png" />
+						</div>
+						<div class="portfolio-grids">		
+							<img src="smartphone/images/p-5.png" />
+						</div>
+					</div>	
+					<div class="clear"> </div>
+				</div>	
+	 	  <!---//End-portfolio----->
+	 	    <!---//End-portfolio----->
+	 	 <div id="team" class="team">
+	 	 	<div class="wrap">
+	 	 		<div class="team-head">
+	 	 			<h3>The team </h3>
+ 					<p>Meet us!</p>
+	 	 		</div>
+       			<div class="row text-center teams">
+       				<div class="col-md-4 team_grid">
+							 <img src="smartphone/images/tm-1.png" />
+       					<h3>John Appleseed</h3>
+       					<p>Vestibulum odio risus, interdum fringilla vulputate.</p>
+       				</div>
+       				<div class="col-md-4 team_grid">
+							 <img src="smartphone/images/tm-2.png" />
+       					<h3>John Appleseed</h3>
+       					<p>Vestibulum odio risus, interdum fringilla vulputate.</p>
+       				</div>
+       				<div class="col-md-4 team_grid">
+							 <img src="smartphone/images/tm-3.png" />
+       					<h3>John Appleseed</h3>
+       					<p>Vestibulum odio risus, interdum fringilla vulputate.</p>
+       				</div>
+       				<div class="clear"> </div>
+       			</div>
+       		</div>
+	 	 </div>
+	 	 <!---//End-team----->
+	 	  <div class="contact">
+	 	  	<div class="wrap">
+	 		<div class="contact-head">
+		 		<h3>It'still free!</h3>
+				 <a class="con-btn" href="#">Just download it!</a>
+			 </div>
+			</div>
+	 	  </div>
+	 	   <div id="contact" class="feedback">
+	 	   		<div class="wrap">
+	 	   			<div class="feed-head">
+	 	 			<h3>Contact </h3>
+ 					<p>Get in touch!</p>
+	 	 		</div>
+	 	 		<div class="feed-contact">
+				 	 			<div class="col-md-8 contact-form">
+											<form>
+												<input type="text" class="textbox" value="Name" onfocus="this.value = '';" onblur="if (this.value = 'Name') {this.value = 'Name';}">
+												<input type="text" class="textbox" value="E-mail" onfocus="this.value = '';" onblur="if (this.value ='E-mail') {this.value = 'E-mail';}">
+												<textarea value="Message" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message';}">Message</textarea>
+												<input type="submit" value="Send a message" >
+
+											</form>
+								</div>
+								<div class="col-md-4 address">
+										<h4>Our company </h4>
+										<p>55 Main St.Toronto</p>
+										<p>1234 City Road,city Name.</p><br>
+										<p>+1534 432 123</p>
+										<p><a href="#" >Contact[at]company name</a></p>
+									<div class="footer-icons">
+										<ul class="soc_icons unstyled-list list-inline">
+											<li><a href="#"><i class="icon_1"></i></a></li>
+											<li><a href="#"><i class="icon_2"></i></a></li>
+											<li><a href="#"><i class="icon_3"></i></a></li>
+											<li><a href="#"><i class="icon_4"></i></a></li>
+											<div class="clearfix"> </div>
+										</ul>
+									</div>
+								</div>
+								<div class="clear"> </div>
+						</div>
+					</div>
+				</div>
+				<div class="footer">
+					<div class="wrap">
+							<div class="logo2">
+								   <img src="smartphone/images/logo2.png" alt="">
+							</div>
+							<div class="copy-right">
+								<p>&copy; 2014  All rights  Reserved | Template by &nbsp;<a href="http://w3layouts.com">W3Layouts</a></p>
+							</div>								
+							<div class="clearfix"> </div>
+						</div>	
+					</div>	
+
+				<script type="text/javascript">
+									$(document).ready(function() {
+										/*
+										var defaults = {
+								  			containerID: 'toTop', // fading element id
+											containerHoverID: 'toTopHover', // fading element hover id
+											scrollSpeed: 1200,
+											easingType: 'linear' 
+								 		};
+										*/
+										
+										$().UItoTop({ easingType: 'easeOutQuart' });
+										
+									});
+								</script>
+					<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+	 </body>
+</html>
