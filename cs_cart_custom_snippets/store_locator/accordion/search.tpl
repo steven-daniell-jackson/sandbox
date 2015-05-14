@@ -11,7 +11,7 @@
     {/if}
 
     <div class="store-location">
-        <div class="float-left store-location-wrapper" id="{$map_container}"></div>
+        <div class="store-location-wrapper" id="{$map_container}"></div>
 
 
 
@@ -22,19 +22,13 @@
                     {$loc.description nofilter}
 
                     {if $loc.city || $loc.country_title}{if $loc.city}{$loc.city}, {/if}{$loc.country_title}{/if}
-                    <div>{include file="buttons/button.tpl" but_role="text" but_meta="cm-map-view-location" but_text=__("view_on_map") but_extra="data-ca-latitude={$loc.latitude} data-ca-longitude={$loc.longitude} "}</div>
+                    <div>{include file="buttons/button.tpl" but_role="text" but_meta="cm-map-view-location" but_text=__("view_on_map") but_extra="data-ca-latitude={$loc.latitude} data-ca-longitude={$loc.longitude} href=# "}</div>
                 </div>
                 {if $store_locations|count > 1}
-                    <hr />
+                   
                 {/if}
             {/foreach}
 
-            {if $store_locations|count > 1}
-                <div class="store-location-item">
-                    <h2>{__("all_stores")}</h2>
-                    <div>{include file="buttons/button.tpl" but_role="text" but_meta="cm-map-view-locations" but_text=__("view_on_map")}</div>
-                </div>
-            {/if}
         </div>
     </div>
 
@@ -61,7 +55,6 @@
     <div class="accordion-container">
         <a  class="accordion-toggle">Gauteng PTA<span class="toggle-icon"><i class="fa fa-plus-circle"></i></span></a>
         <div class="accordion-content" id="gauteng-pta">
-            <strong>PTA Location</strong>
         </div>
         
         <!--/.accordion-content-->
@@ -89,7 +82,7 @@
     <div class="accordion-container">
         <a  class="accordion-toggle">Eastern Cape <span class="toggle-icon"><i class="fa fa-plus-circle"></i></span></a>
         <div class="accordion-content" id="eastern-cape">
-           Location
+           
         </div>
         <!--/.accordion-content-->
     </div>
@@ -97,7 +90,7 @@
     <div class="accordion-container">
         <a  class="accordion-toggle">Mpumalanga<span class="toggle-icon"><i class="fa fa-plus-circle"></i></span></a>
         <div class="accordion-content" id="mpumalanga">
-             Location
+             
         </div>
         <!--/.accordion-content-->
     </div>
@@ -105,7 +98,7 @@
     <div class="accordion-container">
         <a  class="accordion-toggle">Limpopo<span class="toggle-icon"><i class="fa fa-plus-circle"></i></span></a>
        <div class="accordion-content" id="limpopo">
-            Location
+            
         </div>
         <!--/.accordion-content-->
     </div>
@@ -114,7 +107,7 @@
     <div class="accordion-container">
         <a  class="accordion-toggle">Northern Cape<span class="toggle-icon"><i class="fa fa-plus-circle"></i></span></a>
        <div class="accordion-content" id="northern-cape">
-            Location
+            
         </div>
         <!--/.accordion-content-->
     </div>
@@ -123,7 +116,7 @@
     <div class="accordion-container">
         <a  class="accordion-toggle">Free State<span class="toggle-icon"><i class="fa fa-plus-circle"></i></span></a>
        <div class="accordion-content" id="free-state">
-            Location
+            
         </div>
         <!--/.accordion-content-->
     </div>
@@ -133,7 +126,7 @@
     <div class="accordion-container">
         <a  class="accordion-toggle">North West<span class="toggle-icon"><i class="fa fa-plus-circle"></i></span></a>
        <div class="accordion-content" id="north-west">
-            Location
+            
         </div>
         <!--/.accordion-content-->
     </div>
@@ -142,7 +135,7 @@
     <div class="accordion-container">
         <a  class="accordion-toggle">KZN<span class="toggle-icon"><i class="fa fa-plus-circle"></i></span></a>
        <div class="accordion-content" id="kzn">
-            Location
+            
         </div>
         <!--/.accordion-content-->
     </div>
@@ -151,7 +144,23 @@
     <div class="accordion-container">
         <a  class="accordion-toggle">Windhoek<span class="toggle-icon"><i class="fa fa-plus-circle"></i></span></a>
        <div class="accordion-content" id="windhoek">
-            Location
+            
+        </div>
+        <!--/.accordion-content-->
+    </div>
+
+
+
+    <!--/.accordion-container-->
+    <div class="accordion-container">
+        <a  class="accordion-toggle">All Stores<span class="toggle-icon"><i class="fa fa-plus-circle"></i></span></a>
+       <div class="accordion-content" id="windhoek">
+            {if $store_locations|count > 1}
+                <div class="store-location-item">
+                    <h2>{__("all_stores")}</h2>
+                    <div>{include file="buttons/button.tpl" but_role="text" but_meta="cm-map-view-locations" but_text=__("view_on_map")}</div>
+                </div>
+            {/if}
         </div>
         <!--/.accordion-content-->
     </div>
@@ -159,6 +168,8 @@
     <!--/.accordion-container-->
 </div>
 <!-- Accordian End -->
+
+           
 
 {else}
     <p class="no-items">{__("no_data")}</p>

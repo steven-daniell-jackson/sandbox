@@ -279,6 +279,7 @@
             var longitude = jelm.data('ca-longitude');
 
             $.ceMap('viewLocation', latitude, longitude);
+
         });
 
         $('.cm-map-view-locations').on('click', function() {
