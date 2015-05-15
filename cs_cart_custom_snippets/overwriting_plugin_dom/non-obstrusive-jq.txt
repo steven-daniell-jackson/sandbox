@@ -1,0 +1,3 @@
+$(function() {
+    $(".newsletter-title").parent('div').css("padding-left", "20px");
+});

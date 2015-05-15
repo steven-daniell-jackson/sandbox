@@ -1,0 +1,8 @@
+Mycamera.co.za.
+
+Newsletter footer widget
+
+Reason:
+
+Newsletter widget overlapping over plugin css.
+Plugin CSS overrides all other css by loading at the bottom of the page.
