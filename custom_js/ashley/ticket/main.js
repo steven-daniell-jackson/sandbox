@@ -10,8 +10,6 @@ var $setup = {
     qmap: []
 };
 
-//$setup.ques[0] = 0;
-//var regEx = new RegExp("^([0-9]{0,12})([a-f]{0,12}){0,12}$");
 
 //------------------------------------------------------------------------------
 //---------------------------------ticket tab-----------------------------------
@@ -148,44 +146,7 @@ function get_local() {
 }
 function get_ticket() {
     get_local(),drawRows();
-        //drawOptions();
-    //var pers_tbl = document.getElementById("personal");
-    //var q_tbl = document.getElementById("queue");
-    //var qmapy = document.getElementsByName("mapselect");
-    //var qmap_tbl = document.getElementById("qmap");
-    //read_local();
-
-    //    //creating an option under usb button in each select for each que name
-    //    for (var t = 0; t < qmapy.length; t++) {
-    //        for (var q = 0; q < $setup.ques.length; q++) {
-    //            //var ques = document.createElement("option");
-    //            var option = new Option($setup.ques[q]);
-    //            qmapy[t].options.add(option);
-    //        }
-    //
-    //    }
-    //
-    //    //for(var b = 1; b < qmap_tbl.rows.length; b++) {
-    //    for (var n = 1; n < $setup.qmap.length; n++) {
-    //        qmap_tbl.rows[n].cells[1].children[0].children[0].selectedIndex = $setup.qmap[n];
-    //        //console.log(temp.qmap[n]);
-    //    }
-
-    //}
-    //var agent = document.getElementById("agent");
-
-    //for (var r = 1; r < $setup.agents.length; r++) {
-    //    //console.log(temp.agents[r][0]);
-    //    var newrow = agent.insertRow();
-    //    newrow.classList.add("onhover");
-    //    var cell1 = newrow.insertCell(0);
-    //    var cell2 = newrow.insertCell(1);
-
-    //temp_count += 1;
-
-    //    cell1.innerHTML = "<span>" + "Group" + temp_count + ":" + "</span>";
-    //    cell2.innerHTML = "<span>Agents</span>" + "<input type='number' min='1' max='30' placeholder='0' onblur='agentBlur(this)' value=" + $setup.agents[r][1] + ">";
-    //}
+   
 
 
 }
@@ -216,24 +177,7 @@ function ticket_addBtn() {
 
 function qblur(input) {
     input.classList.add("disabled");
-    //var quetb = document.getElementById("queue");
-    //var qmapy = document.getElementsByName("mapselect");
-    //var qsel = document.getElementById("qselect");
-
-    //console.log($tool.ques);
-
-    //for(var t = 0; t < qmapy.length; t++) {
-    //    for (var m = 0; m < $setup.ques.length; m++) {
-    //        //var option = document.createElement("option");
-    //        var option = new Option($setup.ques[m],m);
-    //        //qmapy[t].options = "<option>" + $setup.ques[m] + "</option>";
-    //        //option.text = $setup.ques[m];
-    //        //option.value = $setup.ques[m];
-    //
-    //    }
-    //    //qmapy[t].appendChild(option);
-    //    qmapy[t].options.add(option);
-    //}
+   
 }
 
 //---------------------------------------------------------------------------------
@@ -290,78 +234,34 @@ function drawOptions() {
     for(var t = 0; t < qmapy.length; t++) {
         for (var i = 0; i < $setup.ques.length; i++) {
             var option = new Option($setup.ques[i],i);
-            //var option = document.createElement("option");
-            //option.text = $setup.ques[i];
-            //option.value = $setup.ques[i];
-            //option.setAttribute("i", i);
-            //option.setAttribute("onchange", "updateOption(this)");
-
-            //qmapy.options = "<option>" + $setup.ques[i] + "</option>";
+           
             qmapy[t].options.add(option);
         }
     }
 
 }
 
-//function addOption() {
-//    $setup.qmap[$setup.qmap.length] = "";
-//
-//    drawOptions();
-//
-//}
 
-//function updateOption(opt) {
-//        //$setup.qmap[opt.getAttribute("i")] = opt.options.selectedIndex;
-//
-//        saveToLocal();
-//}
 //---------------------------------------------------------------------------------
 //----------------------------------REMOVE ROWS------------------------------------
 function rowRemove(r) {
-    var rm = r.parentNode.children[0].value;
+ 
     var rmv = r.parentNode.parentNode.rowIndex;
     document.getElementById("queue").deleteRow(rmv);
-    //
-    //
-    for(var i=0; i < $setup.ques.length; i++) {
-        if(rm == $setup.ques[i]){
-            $setup.ques.splice(i,i);
-            console.log("row remove" + $setup.ques.splice(i,i));
-        }
-    }
+
+
+//Reworked JS to solve index not deleting correctly from local storage
+
+ var rm =  r.parentNode.children[0].getAttribute("i");
+ $setup.ques.splice(rm , 1);
+
+ // End
+ 
     saveToLocal();
     console.log(rmv);
 }
 
-//function getEmpty(invalid) {
-//    var div = document.getElementById("invalid");
-//
-//    if(invalid.value == "") {
-//        div.classList.add("invalid");
-//         div.innerHTML = "* Fill out information!!";
-//    }
-//
-//}
-//function testID(element) {
-//    //var regEx = new RegExp("^([0-9]{0,4})([a-f]{0,4}){0,4}$");
-//    var div = document.getElementById("invalid");
-//
-//    if(element.value.length < 12){
-//        div.classList.add("invalid");
-//        div.innerHTML = "* LoggerID must be at least 12 characters";
-//    }
-//
-//    else if(element.value = "^([0-9]{0,4})([a-f]{0,4}){0,4}$") {
-//        regEx.test(element);
-//        div.classList.add("invalid");
-//        div.innerHTML = "* LoggerID can only contain numbers and letters a-f";
-//    }
-//    else {
-//        div.innerHTML = "";
-//    }
-//    console.log(regEx.test(element));
-//
-//}
+
 //---------------------------------------------------------------------------------
 //----------------------------------ADD GROUP------------------------------------
 //agent tab
@@ -382,52 +282,5 @@ function addGrp() {
     cell2.innerHTML = "<span>Agents</span>" + "<input type='number' min='1' max='30' placeholder='0' onblur='agentBlur(this)'>";
 
 }
-//
-//function getColors() {
-//    var color = document.getElementById("kiosk");
-//    $tool.$kiosk_tablet = new Object();
-//    var key;
-//    var value;
-//    //$tool.kiosk_tablet = {};
-//
-//    for(var i = 0; i < color.rows.length; i++) {
-//        key = color.rows[i].cells[1].children[0].getAttribute("key");
-//        value = "#" + color.rows[i].cells[1].children[0].value;
-//        $tool.$kiosk_tablet[key]=value;
-//    }
-//    //$tool[$kiosk_tablet];
-//    //console.log($tool);
-//    //console.log($kiosk_tablet);
-//}
-//
-//
-//function gremove(g) {
-//    var i = g.parentNode.parentNode.rowIndex;
-//    document.getElementById("agent").deleteRow(i);
-//    console.log(i);
-//}
-//
-//
-//
-//function agentBlur(agent) {
-//    agent.classList.add("disabled");
-//    var agnt = document.getElementById("agent");
-//    var grp = document.getElementById("groups");
-//
-//    for (var i = 1; i < agnt.rows.length; i++) {
-//        var option = document.createElement("option");
-//        var key = agnt.rows[i].cells[0].children[0].innerHTML;
-//        var val = agnt.rows[i].cells[1].children[1].value;
-//        key = key.substr(0, key.length - 1);
-//        option.innerHTML = key;
-//        //option.value = val;
-//
-//        agent_obj[key] = val;
-//    }
-//
-//    agentArr.push(val);
-//    grp.appendChild(option);
-//    console.log(agent_obj);
-//}
 
 
