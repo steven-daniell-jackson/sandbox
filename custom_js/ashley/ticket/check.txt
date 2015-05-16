@@ -1,0 +1,32 @@
+var obj = new Object();
+var key = document.getElementById("agent").rows[1].cells[0].children[0].innerHTML;
+
+obj[key.substr(0, key.length - 1)] = "test";
+
+console.log(obj);
+
+
+var obj = new Object();
+var key = document.getElementById("agent").rows[1].cells[0].children[0].innerHTML;
+var value = document.getElementById("agent").rows[1].cells[1].children[1].value;
+
+var select = document.getElementById("qselect");
+
+obj[key.substr(0, key.length - 1)] = value;
+
+for(var i = 0; i < value; i++){
+  var option = document.createElement("option");
+  option.innerHTML = i;
+  select.appendChild(option);
+}
+
+console.log(obj);
+
+
+var gr_select = document.getElementById("groups");
+console.log(gr_select.value);
+
+gr_val = gr_select.options[gr_select.selectedIndex].innerHTML;
+console.log(agent_obj[gr_val]);
+
+console.log(agent_obj['Group2']);

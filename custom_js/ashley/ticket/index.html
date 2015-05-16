@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta content="">
+    <link rel="stylesheet" type="text/css" href="ticket.css">
+    <script type="text/javascript" src="jscolor/jscolor.js"></script>
+
+
+    <script src="main.js"></script>
+
+</head>
+<body onload="ticket(), get_ticket()">
+    <div class="wrapper">
+        <!--<div class="top-bar"><span>GUI SSQ Ticket</span></div>-->
+        <div class="left-section">
+            <div class="head-name">
+                <div><img src="img/usersettings.png" width="60px"></div><span>SSQ Ticket</span>
+            </div>
+            <div class="left-tabs">
+                <div><span>Items:</span></div>
+                <div onclick="changeClass(0)"><span>+</span><span>Ticket</span></div>
+                <div onclick="changeClass(1)"><span>+</span><span>Agent</span></div>
+                <div onclick="changeClass(2)"><span>+</span><span>Kiosk</span></div>
+                <div class="check"><button onclick="addOption()">Save</button></div>
+            </div>
+
+    </div>
+    <div class="right-section">
+        <div id="head-text"></div>
+        <hr class="line" />
+        <div id="wrap" class="hidden">
+            <table id="personal" onchange="pers_read()">
+                    <div id="invalid"></div>
+                        <tr>
+                            <td><span>Logger ID:</span></td><td><input type="text" key="LoggerID" id="logger"></td>
+                        </tr>
+                         <tr>
+                            <td><span>Customer name:</span></td><td><input type="text" key="cust" id="customer_name"></td>
+                         </tr>
+                        <tr>
+                            <td><span>Site/Area:</span></td><td><input type="text" key="site" id="site"></td>
+                        </tr>
+                        <tr class="hidden">
+                            <td><span>Tags:</span></td><td><input type="text" value="999" disabled key="tags"></td>
+                        </tr>
+                        <tr>
+                            <td><span>Qsusb:</span></td>
+                            <td>On<input type="radio" name="qsusb" value=1 key="qsusb">
+                                 Off<input type="radio" name="qsusb" value=0 key="qsusb" checked="checked"></td>
+                         </tr>
+                        <tr>
+                            <td><span>Printer:</span></td>
+                             <td class="select-style"><select id="printer" key="printer">
+                                <option value="none">NONE</option>
+                                <option value="lan">LAN</option>
+                                 <option value="usb">USB</option>
+                                <option value="serial">SERIAL</option>
+                                </select>
+                             </td>
+                        </tr>
+                </table>
+
+            <!--<div class="q-wrap">-->
+                <table id="queue" class="addQ">
+
+                    <tr>
+                        <td><span>Queue names:</span></td><td><button onclick="addRow()">+Add Queue</button></td>
+                    </tr>
+
+                </table>
+            <!--</div>-->
+            <!--<br>-->
+            <!--<div class="q-wrap">-->
+                <table id="qmap" class="addQ">
+                    <tr>
+                        <td><span>Usb button:</span></td>
+                        <td><span></span></td>
+                    </tr>
+                    <tr>
+                        <td><span></span></td>
+                        <td><div class="select-style"><select name="mapselect">
+                            <option>Select</option>
+
+
+                        </select></div></td>
+                    </tr>
+                    <tr>
+                        <td><span></span></td>
+                        <td><div class="select-style"><select name="mapselect">
+                            <option>Select</option>
+
+                        </select></div></td>
+                    </tr>
+                    <tr>
+                        <td><span></span></td>
+                        <td><div class="select-style"><select name="mapselect">
+                            <option>Select</option>
+
+                        </select></div></td>
+                    </tr>
+                    <tr>
+                        <td><span></span></td>
+                        <td><div class="select-style"><select name="mapselect">
+                            <option>Select</option>
+                        </select></div></td>
+                    </tr>
+                    <tr>
+                        <td><span></span></td>
+                        <td><div class="select-style"><select name="mapselect">
+                            <option>Select</option>
+
+                        </select></div></td>
+                    </tr>
+                </table>
+            </div>
+            <!--</div>-->
+            <div id="wrap2" class="hidden">
+                <table id="agent" class="addGrp">
+                    <tr>
+                        <td><span>Groups:</span></td>
+                        <td><button onclick="addGrp()">+Add Group</button>
+                        </td>
+                    </tr>
+                </table>
+
+                <table id="callmap">
+                    <tr>
+                        <td><div class="select-style"><select id="groups" onchange="getAgent()"><option>Select Group</option>
+                        </select></div></td>
+                        <td><input type="checkbox" value="all">All</td>
+                        <td><div class="select-style"><select id="qselect">
+                            <option>Select</option>
+                        </select></div></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="wrap3" class="hidden">
+                <table id="kiosk">
+                    <tr>
+                        <td><span>Header Color:</span></td><td><input key="header" class="color" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td><span>Background Color:</span></td><td><input key="bg" class="color" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td><span>Queue Color:</span></td><td><input key="queue" class="color" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td><span>Bar Color:</span></td><td><input key="bar" class="color" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td><span>Bar Font Color:</span></td><td><input key="barFontColor" class="color" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td><span>Footer Color:</span></td><td><input key="footer" class="color" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td><span>Admin pass:</span></td><td><input type="text" key="admin_pass" onblur=""></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
