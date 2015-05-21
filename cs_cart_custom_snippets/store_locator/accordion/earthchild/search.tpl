@@ -106,7 +106,7 @@
         <!--/.accordion-content-->
     </div>
 
-      
+
         <!--/.accordion-container-->
     <div class="accordion-container">
         <a  class="accordion-toggle">Witbank<span class="toggle-icon"><i class="fa fa-plus-circle"></i></span></a>
@@ -117,7 +117,7 @@
     </div>
     
     
-
+{*Removed - Steven Jackson - As per client
     <!--/.accordion-container-->
     <div class="accordion-container">
         <a  class="accordion-toggle">All Stores<span class="toggle-icon"><i class="fa fa-plus-circle"></i></span></a>
@@ -130,6 +130,8 @@
             {/if}
         </div>
     </div>
+    *}
+
 {else}
     <p class="ty-no-items">{__("no_data")}</p>
 {/if}
