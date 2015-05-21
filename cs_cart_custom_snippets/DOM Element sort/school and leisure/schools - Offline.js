@@ -38,13 +38,15 @@ location[0] = new Array (
 "Germiston Primary",
 "Hans Moore High",
 "Hoerskool Dr E G Jansen",
-"Hoerskool Oosterlig",
+"Hoerskool Oostelig",
 "Hoerskool Voortrekker",
 "Laerskool Baanbreker",
 "Laerskool Concordia",
+"Laerskool Goudrand",
+"Laerskool Oostelig",
 "Laerskool Rynfield",
 "Laerskool Witfield",
-"Laerskool Goudrand",
+"Laerskool Witdeep",
 "Martin Primary",
 "Parkdene Primary",
 "Rynfield Primary",
@@ -65,13 +67,14 @@ location[1] = new Array (
 "Cliffview Primary",
 "Crossroads School",
 "De La Salle Holy Cross College",
+"De La Salle Holy Cross School",
 "Delta Park School",
 "Fairland Laerskool",
 "FDR Primary",
 "Greenside High",
+"Hoerskool Linden",
 "Greenside Primary",
 "Hoerskool Randburg",
-"Hoerskool Linden",
 "I.R Griffith Primary School",
 "King David High School",
 "Laerskool Fairland",
@@ -81,6 +84,7 @@ location[1] = new Array (
 "Northcliff High",
 "Northcliff Primary",
 "Northwest Christian School",
+"NWCS",
 "Panorama Primary",
 "Rand Park High",
 "Rand Park Primary",
@@ -99,13 +103,17 @@ location[2] = new Array (
 "Good Hope Seminary",
 "Groote Schuur Schools",
 "Grove Primary",
-"Herschel Girls' Jnr & Snr",
+"Herschel Girls Jnr",
+"Herschel Girls Jnr & Snr",
+"Herschel Girls Snr",
 "Rhodes High School",
 "Rosebank Junior",
+"SACS Jnr",
 "SACS Jnr & Snr",
-"Sans Souci Girls' High",
-"St Georges Grammar Schools",
-"St Joseph's Schools",
+"SACS Snr",
+"Sans Souci Girls High",
+"St Georges Grammar School",
+"St Joseph's School",
 "Westerford High"
 );
 
@@ -122,7 +130,7 @@ location[3] = new Array (
 "Excelsior Primary",
 "Gene Louw Primary",
 "Goodwood Park Primary",
-"Hoerskool Belville",
+"Hoerskool Bellville",
 "Hoerskool DF Malan",
 "Hoerskool Parow",
 "Hoerskool Tygerberg",
@@ -133,6 +141,7 @@ location[3] = new Array (
 "Marian RC High",
 "Northpine Primary",
 "Northpine THS",
+"Protea Heights",
 "Stellenberg High",
 "The Settlers High School",
 "Totius Primary",
@@ -173,8 +182,12 @@ location[4] = new Array (
 "Voortrekker High",
 "Windsor High",
 "Wittebome High",
+"Wynberg Boys Jnr",
 "Wynberg Boys Jnr & Snr",
+"Wynberg Boys Snr",
+"Wynberg Girls Jnr",
 "Wynberg Girls' Jnr & Snr",
+"Wynberg Girls Snr",
 "Wynberg Senior Secondary",
 "York Road Primary"
 
@@ -205,14 +218,14 @@ Then move the element to the assigned div otherwise skip
 if (sj_class == "ty-subcategories__item"){
 
 //  Finding the specific element which contains the value in the indexed array and appending parent element to relative div > ul
-$('li > a:contains("'+ location[y][i] +'")').parent().appendTo('#' + location[y][0] +' ul');
+$('li > a:contains("'+ location[y][i] +'")').parent().appendTo('#' + location[y][0] +' .offline ul');
 
 }
 
 //Conditional to resolve sub menu items being caught
 else {
-var sj_submenu_eliminator =$('li > a:contains("'+ location[y][i] +'")').parent();
-$(sj_submenu_eliminator[2]).appendTo('#' + location[y][0] +' ul');
+var sj_submenu_eliminator = $('li > a:contains("'+ location[y][i] +'")').parent();
+$(sj_submenu_eliminator[2]).appendTo('#' + location[y][0] +' .offline ul');
 
 }
 

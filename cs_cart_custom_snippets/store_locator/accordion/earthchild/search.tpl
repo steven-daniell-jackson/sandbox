@@ -31,31 +31,13 @@
                 {/if}
             {/foreach}
 
-     {*Custom Accordian - Steven Jackson*}
+     {*Custom Accordian - Steven  Jackson*}
 <div class="content white">
     <div class="accordion-container">
         <a class="accordion-toggle">Cape Town<span class="toggle-icon"><i class="fa fa-plus-circle"></i></span></a>
         <div class="accordion-content" id="cape-town">
 
         </div>
-        <!--/.accordion-content-->
-    </div>
-
-     <div class="accordion-container">
-        <a  class="accordion-toggle">Johannesburg<span class="toggle-icon"><i class="fa fa-plus-circle"></i></span></a>
-        <div class="accordion-content" id="johannesburg">
-
-        </div>
-        
-        <!--/.accordion-content-->
-    </div>
-
-    <!--/.accordion-container-->
-    <div class="accordion-container">
-        <a  class="accordion-toggle">Pretoria<span class="toggle-icon"><i class="fa fa-plus-circle"></i></span></a>
-        <div class="accordion-content" id="pretoria">
-        </div>
-        
         <!--/.accordion-content-->
     </div>
 
@@ -77,6 +59,16 @@
         <!--/.accordion-content-->
     </div>
 
+
+     <div class="accordion-container">
+        <a  class="accordion-toggle">Johannesburg<span class="toggle-icon"><i class="fa fa-plus-circle"></i></span></a>
+        <div class="accordion-content" id="johannesburg">
+
+        </div>
+        
+        <!--/.accordion-content-->
+    </div>
+
     <!--/.accordion-container-->
     <div class="accordion-container">
         <a  class="accordion-toggle">Nelspruit<span class="toggle-icon"><i class="fa fa-plus-circle"></i></span></a>
@@ -85,22 +77,23 @@
         </div>
         <!--/.accordion-content-->
     </div>
-    
-        <!--/.accordion-container-->
-    <div class="accordion-container">
-        <a  class="accordion-toggle">Witbank<span class="toggle-icon"><i class="fa fa-plus-circle"></i></span></a>
-        <div class="accordion-content" id="witbank">
-           
-        </div>
-        <!--/.accordion-content-->
-    </div>
-    
+  
         <!--/.accordion-container-->
     <div class="accordion-container">
         <a  class="accordion-toggle">Port Elizabeth<span class="toggle-icon"><i class="fa fa-plus-circle"></i></span></a>
         <div class="accordion-content" id="port-elizabeth">
            
         </div>
+        <!--/.accordion-content-->
+    </div>
+
+
+    <!--/.accordion-container-->
+    <div class="accordion-container">
+        <a  class="accordion-toggle">Pretoria<span class="toggle-icon"><i class="fa fa-plus-circle"></i></span></a>
+        <div class="accordion-content" id="pretoria">
+        </div>
+        
         <!--/.accordion-content-->
     </div>
     
@@ -112,6 +105,17 @@
         </div>
         <!--/.accordion-content-->
     </div>
+
+      
+        <!--/.accordion-container-->
+    <div class="accordion-container">
+        <a  class="accordion-toggle">Witbank<span class="toggle-icon"><i class="fa fa-plus-circle"></i></span></a>
+        <div class="accordion-content" id="witbank">
+           
+        </div>
+        <!--/.accordion-content-->
+    </div>
+    
     
 
     <!--/.accordion-container-->
