@@ -31,7 +31,7 @@
                 {/if}
             {/foreach}
 
-    <!-- Custom Accordian -->
+   {*Custom Accordion - Steven Jackson*}
 <div class="content white">
     <div class="accordion-container">
         <a class="accordion-toggle">Cape Town<span class="toggle-icon"><i class="fa fa-plus-circle"></i></span></a>
