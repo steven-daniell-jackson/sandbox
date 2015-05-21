@@ -1,0 +1,2 @@
+Include custom script
+{script src="js/tygh/exceptions.js"}
