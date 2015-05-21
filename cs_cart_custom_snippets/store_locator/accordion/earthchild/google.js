@@ -287,7 +287,7 @@
     });
 
 
-// Custom JS 
+// Custom JS - Steven Jackson
 $(document).ready(function () {
  
  // Data queries

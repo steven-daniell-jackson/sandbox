@@ -264,7 +264,6 @@
 
     $(document).ready(function() {
 
-
         $('.cm-map-dialog').on('click', function() {
             $.ceMap('showDialog', 'elm_country', 'elm_city', 'elm_latitude', 'elm_longitude');
         });
@@ -279,7 +278,6 @@
             var longitude = jelm.data('ca-longitude');
 
             $.ceMap('viewLocation', latitude, longitude);
-
         });
 
         $('.cm-map-view-locations').on('click', function() {
@@ -288,23 +286,20 @@
 
     });
 
-    //Custom JS - Steven Jackson
+
+// Custom JS -Steven Jackson
 $(document).ready(function () {
  
  // Data queries
-$('*[data-location="WESTERN CAPE"]').appendTo('#western-cape');
-$('*[data-location="EASTERN CAPE"]').appendTo('#eastern-cape');
-$('*[data-location="GAUTENG"]').appendTo('#gauteng');
-$('*[data-location="GAUTENG PTA"]').appendTo('#gauteng-pta');
-$('*[data-location="GAUTENG JHB"]').appendTo('#gauteng-jhb');
-$('*[data-location="GAUTENG SOUTH"]').appendTo('#gauteng-south');
-$('*[data-location="MPUMALANGA"]').appendTo('#mpumalanga');
-$('*[data-location="LIMPOPO"]').appendTo('#limpopo');
-$('*[data-location="NORTHERN CAPE"]').appendTo('#northern-cape');
-$('*[data-location="FREE STATE"]').appendTo('#free-state');
-$('*[data-location="NORTH WEST"]').appendTo('#north-west');
-$('*[data-location="WINDHOEK,   NAMIBIA"]').appendTo('#windhoek');
-$('*[data-location="KZN"]').appendTo('#kzn');
+$('*[data-location="Cape Town"]').appendTo('#cape-town');
+$('*[data-location="Johannesburg"]').appendTo('#johannesburg');
+$('*[data-location="Pretoria"]').appendTo('#pretoria');
+$('*[data-location="Durban"]').appendTo('#durban');
+$('*[data-location="East London"]').appendTo('#east-london');
+$('*[data-location="Nelspruit"]').appendTo('#nelspruit');
+$('*[data-location="Witbank"]').appendTo('#witbank');
+$('*[data-location="Port Elizabeth"]').appendTo('#port-elizabeth');
+$('*[data-location="Rustenburg"]').appendTo('#rustenburg');
 
     $('.accordion-toggle').on('click', function(event){
         event.preventDefault();
@@ -327,7 +322,6 @@ $('*[data-location="KZN"]').appendTo('#kzn');
     });
 });
 
+   
+
 }(Tygh, Tygh.$));
-
-
-
