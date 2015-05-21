@@ -32,7 +32,8 @@
         </div>
     </div>
 
-    <!-- Custom Accordian -->
+{*Custom Accordian- Steven Jackson*}
+
 <div class="content white">
     <div class="accordion-container">
         <a class="accordion-toggle">Western Cape <span class="toggle-icon"><i class="fa fa-plus-circle"></i></span></a>
@@ -153,12 +154,12 @@
 
     <!--/.accordion-container-->
     <div class="accordion-container">
-        <a  class="accordion-toggle">All Stores<span class="toggle-icon"><i class="fa fa-plus-circle"></i></span></a>
+        <a class="accordion-toggle">All Stores<span class="toggle-icon"><i class="fa fa-plus-circle"></i></span></a>
        <div class="accordion-content" id="windhoek">
             {if $store_locations|count > 1}
                 <div class="store-location-item">
                     <h2>{__("all_stores")}</h2>
-                    <div>{include file="buttons/button.tpl" but_role="text" but_meta="cm-map-view-locations" but_text=__("view_on_map")}</div>
+                    <div>{include file="buttons/button.tpl" but_role="text"  href="#" but_meta="cm-map-view-locations" but_text=__("view_on_map")}</div>
                 </div>
             {/if}
         </div>
