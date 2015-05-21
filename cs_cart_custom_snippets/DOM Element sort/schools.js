@@ -196,31 +196,36 @@ while (y <= location.length - 1 ){
 for (var i = 1 ; i < location[y].length + 1;  i++) {
 
 
+
 // Assigning value of parent's class's value
 var sj_class = $('li > a:contains("'+ location[y][i] +'")').parent().attr('class');
-
 
 
 /*
 Conditional: If the parent class NOT equal to the submenu class.
 Then move the element to the assigned div otherwise skip
 */
-
-if (sj_class != "ty-menu__submenu-item"){
+if (sj_class == "ty-subcategories__item"){
 
 //  Finding the specific element which contains the value in the indexed array and appending parent element to relative div > ul
 $('li > a:contains("'+ location[y][i] +'")').parent().appendTo('#' + location[y][0] +' ul');
 
-console.log(location[y][i]);
+}
 
+//Conditional to resolve sub menu items being caught
+else {
+var sj_submenu_eliminator =$('li > a:contains("'+ location[y][i] +'")').parent();
+$(sj_submenu_eliminator[2]).appendTo('#' + location[y][0] +' ul');
 
 }
+
 // End if
+
+
 
 
 }; 
 // End For loop
-
 // // Increment while loop value
 y++;
  };
