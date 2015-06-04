@@ -1,0 +1,14 @@
+Platform: CONCRETE CMS
+Date: 4 June 2015
+Client:  www.tyresandmore.com
+Location: /themes/TyresMore/elements/header.php
+
+Issue: Used resolve page duplication issues.
+
+eg. 
+www.example.com/page 
+www.example.com/page/
+
+Being read as the different pages by Google spider
+
+Note: Using redirects would cause internal redirect errors
