@@ -1,0 +1,85 @@
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.content-item {
+  background: url(http://dribbble.s3.amazonaws.com/users/21389/screenshots/537633/image_ink_logo.png);
+  -moz-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  height: 300px;
+  margin: 20px auto;
+  overflow: hidden;
+  position: relative;
+  width: 400px;
+}
+.content-item .overlay {
+  border-bottom: 100px solid #e8c63d;
+  border-left: 100px solid transparent;
+  bottom: 0;
+  height: 0;
+  opacity: .95;
+  position: absolute;
+  right: 0;
+  text-indent: -9999px;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+  width: 0;
+}
+.content-item:hover .overlay {
+  border-bottom: 800px solid #e8c63d;
+  border-left: 800px solid transparent;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+.content-item .corner-overlay-content {
+  bottom: 15px;
+  color: #333;
+  position: absolute;
+  right: 15px;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+.content-item:hover .corner-overlay-content {
+  opacity: 0;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+.content-item .overlay-content {
+  bottom: 0;
+  color: #333;
+  left: 0;
+  opacity: 0;
+  padding: 30px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+.content-item .overlay-content h2 {
+  border-bottom: 1px solid #333;
+  padding: 0 0 12px;
+}
+.content-item:hover .overlay-content {
+  opacity: 1;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  -moz-transition-delay: 0.3s;
+  -o-transition-delay: 0.3s;
+  -webkit-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+}

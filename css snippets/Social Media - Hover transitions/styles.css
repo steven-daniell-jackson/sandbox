@@ -1,0 +1,147 @@
+.big-section     { color:#FFF; padding-top:100px; }
+.row             { margin-bottom:100px; text-align:center; }
+
+h1               { font-size:40px; padding-bottom:30px; padding-top:30px; text-align:center; }
+
+/* TWITTER =========================================== */
+#twitter         { background:#1CC1F7; }
+
+    /* twitter rectangles =================================================== */
+    #twitter-rectangle .tw-outside         { background:#0081b7; display:block; height:55px; position:relative; }
+    
+    #twitter-rectangle .tw-text, #twitter-rectangle .tw-click { display:block; height:100%; padding-top:15px; position:absolute; width:100%; 
+        transition:0.3s ease all; -moz-transition:0.3s ease all; -webkit-transition:0.3s ease all;
+    }
+    #twitter-rectangle .tw-text            { font-size:20px; font-weight:700; z-index:9999; }
+    #twitter-rectangle .tw-click           { z-index:8888; }
+    
+    /* twitter 1 ------------------------------------- */
+    #tw-1                   { overflow:hidden;  }
+    #tw-1 .tw-click         { margin-top:-100px; }
+    
+    #tw-1:hover .tw-text      { margin-top:100px; }
+    #tw-1:hover .tw-click     { margin-top:0; }
+
+    /* twitter 2 ------------------------------------ */
+    #tw-2                     {  }
+    #tw-2 .tw-text            { background:#42e7ff; height:100%; width:100%; }
+    #tw-2 .tw-click           {  }
+    
+    #tw-2:hover .tw-text      { margin-top:-55px; }
+    #tw-2:hover .tw-click     {  }
+    
+    /* twitter circles ====================================================== */
+    #twitter-circle .tw-outside         { display:block; margin:0 auto; position:relative; }
+    
+    #twitter-circle .tw-text, #twitter-circle .tw-click { cursor:pointer; display:block; position:absolute; width:100%; 
+        transition:0.3s ease all; -moz-transition:0.3s ease all; -webkit-transition:0.3s ease all;
+    }
+    #twitter-circle .tw-text            { font-size:20px; font-weight:700; z-index:9999; }
+    #twitter-circle .tw-click           { z-index:8888; }
+    
+    /* twitter 3 ------------------------------------ */
+    #tw-3                     { height:100px; width:100px; }
+    #tw-3 .tw-text            { background:#0081b7; font-size:60px; height:100%; padding-top:10px; 
+        border-radius:50%; -moz-border-radius:50%; -webkit-border-radius:50%;
+    }
+    #tw-3 .tw-click           { background:#42e7ff; opacity:0; padding:10px 10px 5px; margin-top:25px; margin-left:-40px; padding-left:30px; width:auto; 
+        border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px;
+    }
+    
+    #tw-3:hover .tw-text      { margin-left:-100px; 
+        transform:rotate(-360deg); -moz-transform:rotate(-360deg); -webkit-transform:rotate(-360deg); 
+    }
+    #tw-3:hover .tw-click     { opacity:1; margin-left:-20px; }
+    
+    /* twitter 4 --------------------- */
+    #tw-4                     { background:#0081b7; height:50px; overflow:hidden; text-align:center; width:50px; 
+    border-radius:50%; -moz-border-radius:50%; -webkit-border-radius:50%;
+    transition:0.3s ease all; -moz-transition:0.3s ease all; -webkit-transition:0.3s ease all;
+}
+    #tw-4 .tw-text            { font-size:30px; height:100%; padding-top:5px; }
+    #tw-4 .tw-click           { opacity:0; padding:10px 10px 5px; margin:0 auto; margin-top:0px; }
+    
+    #tw-4:hover               { width:200px; 
+        border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px;
+    }
+    #tw-4:hover .tw-text      { opacity:0; }
+    #tw-4:hover .tw-click     { opacity:1; margin-top:5px; }
+    
+/* GOOGLE =================================================================== */
+#google         { background:#DD4B39; }
+    
+    /* google =================================================== */
+    .go-outside         { display:block; margin:0 auto; overflow:hidden; position:relative; }
+    
+    .go-text, .go-click { display:block; position:absolute; text-align:center; width:100%;
+        transition:0.3s ease all; -moz-transition:0.3s ease all; -webkit-transition:0.3s ease all;
+    }
+    .go-text            { font-size:20px; font-weight:700; z-index:9999; }
+    
+    .go-click           { z-index:8888; } 
+    
+    /* google 1 --------------------------------- */
+    #go-1               { background:#ff715f; height:55px; }
+    #go-1 .go-text      { background:#b72513; height:100%; padding-top:15px; }
+    #go-1 .go-click     { padding-top:15px; }
+     
+    #go-1:hover .go-text         { margin-top:100px; }
+    #go-1:hover span             {  }
+    
+    /* google 2 --------------------------------- */
+    #go-2               { height:100px; }
+    #go-2 .go-text      { font-size:40px; height:20%; }
+    #go-2 .go-click     { margin-left:100px; opacity:0; padding-top:15px; }
+     
+    #go-2:hover .go-text         { margin-left:-100px; }
+    #go-2:hover .go-click        { margin-left:0; opacity:1; }
+    
+    /* google 3 --------------------------------- */
+    #go-3               { height:150px; margin-top:-40px; padding-top:40px; }
+    
+        /* text that shows up beneath */
+        #go-3::after     { content:attr(data-title); color:#ff715f; font-size:20px; position:absolute; bottom:0px; left:0; width:100%; opacity:0; text-align:center; }
+    
+    #go-3 .go-text      { background:#b72513; font-size:40px; padding:3px; width:30%; left:35%;
+        border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px;
+    }
+    #go-3 .go-click     { opacity:0; padding-top:15px; }
+     
+    #go-3:hover .go-text         { margin-top:-40px; }
+    #go-3:hover .go-click        { margin-top:20px; opacity:1; }
+    
+        #go-3:hover::after       { opacity:1; }
+        
+    /* google 4 --------------------------------- */
+    #go-4               { height:200px; }
+    #go-4 .go-text      { font-size:100px; height:20%; }
+    #go-4 .go-click     { opacity:0; padding-top:65px; 
+        transform:scale(0.5); -moz-transform:scale(0.5); -webkit-transform:scale(0.5); 
+    }
+     
+    #go-4:hover .go-text         { opacity:0; z-index:888; 
+        transform:scale(2); -moz-transform:scale(2); -webkit-transform:scale(2); 
+    }
+    #go-4:hover .go-click        { opacity:1; z-index:999; 
+        transform:scale(1); -moz-transform:scale(1); -webkit-transform:scale(1); 
+    }
+    
+/* FACEBOOK ================================================================= */
+/* from david walsh: http://davidwalsh.name/demo/css-flip.php */
+#facebook         { background:#425F9C; padding-bottom:50px; text-align:center; }
+
+.flip-container { -webkit-perspective: 1000; -webkit-transform-style: preserve-3d; }
+
+.flip-container, .front, .back { margin:0 auto; width: 225px; height: 200px; }
+
+.flipper { -webkit-transition: 0.6s; -webkit-transform-style: preserve-3d; position: relative; }
+
+.front, .back { -webkit-backface-visibility: hidden; -webkit-transition: 0.6s; -webkit-transform-style: preserve-3d; padding-top:50px; padding-bottom:50px; position: absolute; top: 0; left: 0; }
+
+.front  { background:#35528f; z-index: 2; -webkit-transform: rotateY(0deg); }
+    .front span     { font-size:80px; margin-top:10px; }
+.back   { background:#021f5c; padding-top:65px; -webkit-transform: rotateY(-180deg); } 
+
+    .flip-container:hover .back  { -webkit-transform: rotateY(0deg); }
+  .flip-container:hover .front { -webkit-transform: rotateY(180deg); }
+    

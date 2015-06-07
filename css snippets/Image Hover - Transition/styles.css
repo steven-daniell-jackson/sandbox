@@ -1,0 +1,122 @@
+*{
+  padding: 0px;
+  margin: 0px;
+  border:0;
+}
+body{
+  background: #F6F6F6;
+  background: linear-gradient(to bottom, #F5F6F6 0%, #C4C4C4 100%) fixed;
+  font: 18px'Lucida Sans Unicode';
+  color:#FFF;
+}
+section#wrapper{
+  width: 1250px;
+  margin: 100px auto 0 auto;
+
+}
+
+h1{
+  text-align:center;
+  font-size:50px;
+  color: #707070;
+  text-transform: uppercase;
+
+}
+
+div.box{
+  height:200px;
+  width:200px;
+  float:left;
+  margin: 50px 20px 0 20px;
+  border-radius: 105px;
+  border: 5px solid #FFF;
+  overflow: hidden;
+  box-shadow: rgba(0,0,0,0.5) 10px 10px 20px;
+  
+}
+div.box img{
+  border-radius: 100px;
+}
+div.box div{
+  width:200px;
+  height:105px;
+  background: #000;
+  border-radius:100px;
+  text-align: center;
+  padding: 95px 0 0 0;
+     
+}
+div.efeito1{
+  position:relative;
+}
+div.efeito1 div{
+  position:absolute;
+  top:0;
+  left:0;
+  opacity: 0;
+  transition: opacity 500ms;
+}
+div.efeito1 div:hover{
+  opacity: 0.8;
+}
+div.efeito2{
+  position:relative;
+}
+div.efeito2 img{
+  position:absolute;
+  top: 0;
+  left: 0;
+  transition: margin-left 250ms;
+}
+div.efeito2:hover img{
+  margin-left: 200px;
+}
+div.efeito2 div{
+  z-index: -1;
+}
+div.efeito3{
+  position: relative;
+}
+div.efeito3 div{
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: -200px;
+  transition: margin-left 500ms;
+}
+div.efeito3:hover div{
+  margin-left: 0;
+}
+div.efeito4{
+  position: relative;
+}
+div.efeito4 img{
+  position: absolute;
+  top:0;
+  left: 0; 
+}
+div.efeito4 div{
+  opacity: .8;
+  transform: scale(0);
+  transition-duration:500ms;
+  
+}
+div.efeito4:hover div{
+  transform: scale(1);
+  transition-duration:500ms;
+
+}
+div.efeito5{
+  position: relative;
+}
+div.efeito5 div{
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-top: -200px;
+  transition: margin-top 500ms;
+  z-index:1;
+}
+div.efeito5:hover div{
+  margin-top: 0;
+}

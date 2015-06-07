@@ -1,0 +1,57 @@
+@import url(http://fonts.googleapis.com/css?family=Montserrat);
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.btn-container {
+  padding: 100px;
+}
+
+.btn {
+  position: relative;
+  display: block;
+  max-width: 300px;
+  padding: 10px 20px;
+  color: #62BBC1;
+  font-size: 24px;
+  text-align: center;
+  text-decoration: none;
+  border: 3px solid #868686;
+  overflow: hidden;
+  -webkit-transition: color 150ms ease-in-out 150ms, border-color 300ms ease-out, box-shadow 300ms ease-in-out;
+          transition: color 150ms ease-in-out 150ms, border-color 300ms ease-out, box-shadow 300ms ease-in-out;
+  z-index: 1;
+}
+.btn.center {
+  margin: 0 auto;
+}
+.btn:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #131313;
+  z-index: -1;
+  -webkit-transform: scaleX(0);
+      -ms-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transition: -webkit-transform 300ms ease-out 200ms;
+          transition: transform 300ms ease-out 200ms;
+}
+.btn:hover {
+  color: white;
+  border-color: #b9b9b9;
+  box-shadow: 0 0 16px rgba(255, 255, 255, 0.1);
+}
+.btn:hover:after {
+  -webkit-transform: scaleX(1);
+      -ms-transform: scaleX(1);
+          transform: scaleX(1);
+  -webkit-transform-origin: 50% 50%;
+      -ms-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  -webkit-transition: -webkit-transform 300ms ease-out;
+          transition: transform 300ms ease-out;
+}

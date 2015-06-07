@@ -1,0 +1,51 @@
+.item {
+  width: 300px;
+  height: 123px;
+  margin: 20% auto;
+  padding: 5px;
+  border: 1px #E0E0E0 solid; 
+  border-radius: 2px;
+  background: #EBEBEB;
+  transition: all 1s ease;
+}
+.item img {
+  width: 100%;
+}
+.item:hover .overlay {
+  background: #FFF;
+  opacity:0.8;
+}
+.item:hover .button {
+  width: 70px;
+  height: 70px;
+  margin: -96px auto 0 auto;
+  background: url(http://immedesign.nl/cssdeck/next.png) center center no-repeat #0076ED;
+  opacity: .7;
+  transform:scale(1);
+  animation-delay: inherit;
+  animation:scale .5s infinite;   
+  cursor: pointer;
+}
+.overlay {
+  width: 100%;
+  height: 100%;
+  margin: -127px 0 0 0;
+  background: #000;
+  opacity:0;
+  transition: all 1s ease;
+}
+.button {
+  width: 123px;
+  height: 123px;
+  margin: -123px auto 0 auto;
+  background: url(http://immedesign.nl/cssdeck/next.png) center center no-repeat;
+  opacity: 0;
+  border-radius: 50%;
+  transition: all .2s ease;
+}
+
+@keyframes scale {
+  0%   { transform:scale(1); }
+  50%   { transform:scale(1.1); }
+  100% { transform:scale(1); }
+}

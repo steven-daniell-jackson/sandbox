@@ -1,0 +1,127 @@
+
+body,ul{
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Lato',sans-serif;
+  background: #e74c3c;
+}
+
+h1{
+  color: #fff;
+  text-align: center;
+  margin-top: 2em;
+  font-weight: 200;
+  font-size: 80px;
+}
+
+.wrapper{
+  width: 100%;
+  margin: 2em auto;
+  background: #3D464E;
+  clear: both;
+  overflow: hidden;
+}
+
+ul{
+  width: 900px; 
+  margin: 0px auto;
+}
+
+ul li{
+  border-right: 1px solid #3D464E;
+  cursor: pointer;
+  float: left;
+  overflow: hidden;
+  height: 177px;
+  list-style: none;
+  position: relative;
+  width: 72px;
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  background: #fff;
+}
+
+li a{
+  display: block;
+  width: 100px;
+  height: 177px;
+  line-height: 177px;
+  color: #fff;
+  text-decoration: none;
+  text-indent: 10px;
+  height: 177px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 72px;
+  text-indent: -999px;
+  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+}
+
+ul li:first-child a{
+  background: url("http://www.htmldrive.net/edit_media/2013/201306/20130604/accordion/css/behance_btn.gif") left top;
+}
+
+ul li:nth-child(2) a{
+  background: url("http://www.htmldrive.net/edit_media/2013/201306/20130604/accordion/css/flickr_btn.gif") left top;
+}
+
+ul li:nth-child(3) a{
+  background: url("http://www.htmldrive.net/edit_media/2013/201306/20130604/accordion/css/linkedin_btn.gif") 
+}
+
+ul li:nth-child(4) a{
+  background: url("http://www.htmldrive.net/edit_media/2013/201306/20130604/accordion/css/facebook_btn.gif") 
+}
+
+ul li:nth-child(5) a{
+  background: url("http://www.htmldrive.net/edit_media/2013/201306/20130604/accordion/css/twitter_btn.gif") 
+}
+
+ul li:hover a{
+  background-position: right top;
+}
+
+ul li:hover{
+  width: 350px;
+}
+
+p{
+ color: #5F5F5F;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 18px;
+  padding-top: 40px;
+  width: 225px;
+  margin: 0px 7em;
+}
+
+
+
+
+/*font-face*/
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 100;
+  src: local('Lato Hairline'), local('Lato-Hairline'), url(http://themes.googleusercontent.com/static/fonts/lato/v6/boeCNmOCCh-EWFLSfVffDg.woff) format('woff');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Lato Light'), local('Lato-Light'), url(http://themes.googleusercontent.com/static/fonts/lato/v6/KT3KS9Aol4WfR6Vas8kNcg.woff) format('woff');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lato Regular'), local('Lato-Regular'), url(http://themes.googleusercontent.com/static/fonts/lato/v6/9k-RPmcnxYEPm8CNFsH2gg.woff) format('woff');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Lato Bold'), local('Lato-Bold'), url(http://themes.googleusercontent.com/static/fonts/lato/v6/wkfQbvfT_02e2IWO3yYueQ.woff) format('woff');
+}

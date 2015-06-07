@@ -1,0 +1,666 @@
+*,
+*:after,
+*::before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Open Sans', 'Helvetica Neue', Arial, Tahoma, sans-serif;
+}
+
+header {
+  margin: 0 auto;
+  padding: 2em;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2.625em;
+  margin: 0;
+  font-weight: 300;
+    cursor: pointer;
+    text-shadow: 2px 2px 8px #583A3A;
+    color: #fff;
+  -webkit-transition: text-shadow 0.8s, color 0.8s;
+  -moz-transition: text-shadow 0.8s, color 0.8s;
+  transition: text-shadow 0.8s, color 0.8s;
+}
+header h1:hover {
+  color: #89867e;
+    text-shadow: none;
+}
+
+section {
+  margin: 0 auto;
+  padding: 3em 3em;
+    margin: 3em;
+  text-align: center;
+}
+
+.color-1 {
+  background: #90CA77;
+}
+
+.color-2 {
+  background: #81C6DD;
+}
+
+.color-3 {
+  background: #E9B64D;
+}
+
+.color-4 {
+  background: #E48743;
+}
+
+.color-5 {
+  background: #FF8C00;
+}
+
+.color-6 {
+  background: #9E3B33;
+}
+
+.color-7 {
+  background: #468966;
+}
+
+.color-8 {
+  background: #FFF0A5;
+}
+
+.color-9 {
+  background: #2E0927;
+}
+
+.color-10 {
+  background: #B64926;
+}
+
+.color-11 {
+  background: #8E2800;
+}
+
+nav a {
+  position: relative;
+  display: inline-block;
+  margin: 15px 25px;
+  outline: none;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 400;
+  text-shadow: 0 0 1px rgba(255,255,255,0.3);
+  font-size: 1.5em;
+}
+
+nav a:hover,
+nav a:focus {
+  outline: none;
+}
+
+/* The Effects */
+
+/* Effect 1: Progressing border */
+.nav-1 a::after {
+  display: block;
+}
+
+.nav-1 a::after {
+  margin-top: 5px;
+  width: 0;
+    height: 4px;
+    background-color: #fff;
+    content: '';
+  opacity: 0;
+  -webkit-transition: width 0.3s, opacity 0.6s;
+  -moz-transition: width 0.3s, opacity 0.6s;
+  transition: width 0.3s, opacity 0.6s;
+}
+
+.nav-1 a:hover::after,
+.nav-1 a:focus::after {
+  opacity: 1;
+  width: 100%;
+}
+
+/* Effect 2: Expanding border */
+.nav-2 a::after {
+  display: block;
+    margin: 0 auto;
+  margin-top: 5px;
+  width: 0;
+    height: 4px;
+    background-color: #fff;
+    content: '';
+  opacity: 0;
+  -webkit-transition: width 0.3s, opacity 0.6s;
+  -moz-transition: width 0.3s, opacity 0.6s;
+  transition: width 0.3s, opacity 0.6s;
+}
+
+.nav-2 a:hover::after,
+.nav-2 a:focus::after {
+  opacity: 1;
+  width: 100%;
+}
+
+/* Effect 3: Dropping shadow */
+.nav-3 a::after {
+  display: block;
+    position: absolute;
+}
+
+.nav-3 a::after {
+  width: 100%;
+    height: 100%;
+    content: attr(data-hover);
+  opacity: 0;
+  -webkit-transition: -webkit-transform 0.3s cubic-bezier(1.000, -0.530, 0.405, 1.425);
+  -moz-transition: -moz-transform 0.3s cubic-bezier(1.000, -0.530, 0.405, 1.425);
+  transition: transform 0.3s cubic-bezier(1.000, -0.530, 0.405, 1.425);
+    color: #B88214;
+}
+
+.nav-3 a:hover::after,
+.nav-3 a:focus::after {
+  opacity: 1;
+  -webkit-transform: translateY(-100%);
+  -moz-transform: translateY(-100%);
+  transform: translateY(-100%);
+}
+
+/* Effect 4: Revolving */
+.nav-4 a {
+    display:inline-block;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform-origin: 50% 50%;
+  -moz-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+    -webkit-perspective: 600px;
+    -moz-perspective: 600px;
+    perspective: 600px;
+    -webkit-transition: -webkit-transform 0.7s, color 1s;
+  -moz-transition: -moz-transform 0.7s, color 1s;
+  transition: transform 0.7s, color 1s;
+}
+
+.nav-4 a:hover,
+.nav-4 a:focus {
+    color: #031C2C;
+  -webkit-transform: rotateX(-360deg);
+  -moz-transform: rotateX(-360deg);
+  transform: rotateX(-360deg);
+}
+
+/* Effect 5: Two ways */
+.nav-5 a {
+}
+.nav-5 a::after {
+    position:absolute;
+    content:'';
+    width:100%;
+    height:2px;
+    top: 30px;
+    right:0;
+    background-color:white;
+    -webkit-transition: width 0.4s; 
+    -moz-transition:  width 0.4s;
+    transition: width 0.4s;
+}
+
+.nav-5 a::before{
+    position:absolute;
+    content:'';
+    width:100%;
+    height:2px;
+    bottom: 30px;
+    left:0;
+    background-color:red;
+    -webkit-transition: width 0.4s; 
+    -moz-transition: width 0.4s;
+    transition: width 0.4s;
+}
+.nav-5 a:hover::after{
+    width: 50%;
+}
+.nav-5 a:hover::before{
+    width: 50%;
+}
+
+/* Effect 6: Bullets */
+.nav-6 a::before {
+    display:block;
+  position: absolute;
+    width:100%;
+  top: 70%;
+  left: -50%;
+    padding-left: 20px;
+  content: '•';
+    opacity: 0;
+    text-shadow: 0px -15px #fff, 0px -30px #fff, 0px -45px #fff;
+  font-size: 1em;
+  -webkit-transition: -webkit-transform 0.8s, opacity 0.3s;
+  -moz-transition: -moz-transform 0.8s, opacity 0.3s;
+  transition: transform 0.8s, opacity 0.3s;
+}
+
+.nav-6 a:hover::before,
+.nav-6 a:focus::before {
+    opacity: 1;
+    -webkit-transform: translateX(100%);
+  -moz-transform: translateX(100%);
+  transform: translateX(100%);
+}
+
+/* Effect 7: Pendulum */
+.nav-7 a::after {
+    display:block;
+  position: absolute;
+    width:100%;
+  top: 0%;
+  left: 0%;
+  content: attr(data-hover);
+    opacity: 1;
+  -webkit-transform-origin: 0 50%;
+  -moz-transform-origin: 0 50%;
+  transform-origin: 0 50%;
+  -webkit-transition: -webkit-transform 0.8s cubic-bezier(.500, -0.730, 0.105, 2.425), opacity 0.3s linear 0.8s, color 0.8s;
+  -moz-transition: -moz-transform 0.8s cubic-bezier(.500, -0.730, 0.105, 2.425), opacity 0.3s linear 0.8s, color 0.8s;
+  transition: transform 0.8s cubic-bezier(.500, -0.730, 0.105, 2.425), opacity 0.3s linear 0.8s, color 0.8s;
+}
+
+.nav-7 a:hover::after,
+.nav-7 a:focus::after {
+    opacity: 0;
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  transform: rotate(90deg);
+    color: transparent;
+}
+
+/* Effect 8: Revenge of fallen */
+.nav-8 a::after {
+    display:block;
+  position: absolute;
+    width:100%;
+  top: 0%;
+  left: 0%;
+  content: attr(data-hover);
+    opacity: 1;
+    color: #5A8F46;
+  -webkit-transition: -webkit-transform 0.8s, opacity 0.6s 0.2s;
+  -moz-transition: -moz-transform 0.8s, opacity 0.6s 0.2s;
+  transition: transform 0.8s, opacity 0.6s 0.2s;
+}
+
+.nav-8 a:hover::after,
+.nav-8 a:focus::after {
+    opacity: 0;
+  -webkit-transform: translateY(40px) rotateX(-600deg);
+  -moz-transform: translateY(40px) rotateX(-600deg);
+  transform: translateY(40px) rotateX(-600deg);
+}
+
+/* Effect 9: Open the box */
+.nav-9 a {
+    color: #009FD5;
+}
+
+.nav-9 a::after {
+    display: block;
+  position: absolute;
+    width: 100%;
+  top: 0%;
+  left: 0%;
+  content: attr(data-hover);
+    opacity: 1;
+    color: #fff;
+  -webkit-transform-origin: 0 50%;
+  -moz-transform-origin: 0 50%;
+  transform-origin: 0 50%;
+  -webkit-transition: -webkit-transform 0.8s, opacity 0.6s 0.2s;
+  -moz-transition: -moz-transform 0.8s, opacity 0.6s 0.2s;
+  transition: transform 0.8s, opacity 0.6s 0.2s;
+}
+
+.nav-9 a:hover::after,
+.nav-9 a:focus::after {
+    opacity: 0;
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+/* Effect 10: Zoom In */
+.nav-10 a {
+    color: rgba(53, 44, 44, 0.59);
+}
+.nav-10 a::after {
+    display:block;
+  position: absolute;
+    width:100%;
+  top: 0%;
+  left: 0%;
+  content: attr(data-hover);
+    opacity: 1;
+    color: #fff;
+    text-shadow: 0 0 15px #000;
+  -webkit-transition: -webkit-transform 0.8s, opacity 0.6s 0.2s;
+  -moz-transition: -moz-transform 0.8s, opacity 0.6s 0.2s;
+  transition: transform 0.8s, opacity 0.6s 0.2s;
+}
+
+.nav-10 a:hover::after,
+.nav-10 a:focus::after {
+    opacity: 0;
+  -webkit-transform: scale3d(1.5, 1.5, 1);
+  -moz-transform: scale3d(1.5, 1.5, 1);
+  transform: scale3d(1.5, 1.5, 1);
+}
+
+/* Effect 11: Zoom Out */
+.nav-11 a {
+    color: rgba(53, 44, 44, 0.59);
+}
+.nav-11 a::after {
+    display:block;
+  position: absolute;
+    width:100%;
+  top: 0%;
+  left: 0%;
+  content: attr(data-hover);
+    opacity: 1;
+    color: #fff;
+    text-shadow: 0 0 15px #000;
+  -webkit-transition: -webkit-transform 0.6s, opacity 0.6s;
+  -moz-transition: -moz-transform 0.6s, opacity 0.6s;
+  transition: transform 0.6s, opacity 0.6s;
+}
+
+.nav-11 a:hover::after,
+.nav-11 a:focus::after {
+    opacity: 0;    
+  -webkit-transform: scale3d(0.5, 0.5, 1);
+  -moz-transform: scale3d(0.5, 0.5, 1);
+  transform: scale3d(0.5, 0.5, 1);
+}
+
+/* Effect 12: In the air */
+.nav-12 a {
+    color: rgba(53, 44, 44, 0.59);
+}
+.nav-12 a::after {
+    display:block;
+  position: absolute;
+    width:100%;
+  top: 0%;
+  left: 0%;
+  content: attr(data-hover);
+    opacity: 1;
+    color: #fff;
+    text-shadow: 0 0 15px #000;
+  -webkit-transition: -webkit-transform 0.6s, opacity 0.6s;
+  -moz-transition: -moz-transform 0.6s, opacity 0.6s;
+  transition: transform 0.6s, opacity 0.6s;
+}
+
+.nav-12 a:hover::after,
+.nav-12 a:focus::after {
+    opacity: 0;
+  -webkit-transform: translateY(-30px);
+  -moz-transform: translateY(-30px);
+  transform: translateY(-30px);
+}
+
+/* Effect 13: Glow */
+.nav-13 a {
+    color: rgba(53, 44, 44, 0.59);
+}
+.nav-13 a::after {
+    display: block;
+  position: absolute;
+    width:100%;
+  top: 0%;
+  left: 0%;
+  content: attr(data-hover);
+    opacity: 1;
+    color: #fff;
+    text-shadow: 0 0 15px #000;
+  -webkit-transition: text-shadow 0.6s, opacity 0.6s;
+  -moz-transition: text-shadow 0.6s, opacity 0.6s;
+  transition: text-shadow 0.6s, opacity 0.6s;
+}
+
+.nav-13 a:hover::after,
+.nav-13 a:focus::after {
+    text-shadow: -1px 1px 8px #ffc, 1px -1px 8px #fff
+}
+
+/* Effect 14: Smoke */
+.nav-14 a {
+    color: rgba(53, 44, 44, 0.59);
+}
+.nav-14 a::after {
+    display: block;
+  position: absolute;
+    width:100%;
+  top: 0%;
+  left: 0%;
+  content: attr(data-hover);
+    opacity: 1;
+    color: #fff;
+  -webkit-transition: text-shadow 1s, opacity 0.8s 0.2s;
+  -moz-transition: text-shadow 1s, opacity 0.8s 0.2s;
+  transition: text-shadow 1s, opacity 0.8s 0.2s;
+}
+
+.nav-14 a:hover::after,
+.nav-14 a:focus::after {
+    opacity: 0;
+    text-shadow: -1px 30px 10px #ffc, 1px -30px 10px #fff
+}
+
+/* Effect 15: Wizard */
+.nav-15 a {
+    color: rgba(53, 44, 44, 0.59);
+}
+.nav-15 a::after {
+    display: block;
+  position: absolute;
+    width:100%;
+  top: 0%;
+  left: 0%;
+  content: attr(data-hover);
+    opacity: 1;
+    color: #fff;
+  -webkit-transition: text-shadow 1s, color 0.8s, opacity 0.8s 0.2s;
+  -moz-transition: text-shadow 1s, color 0.8s, opacity 0.8s 0.2s;
+  transition: text-shadow 1s, color 0.8s, opacity 0.8s 0.2s;
+}
+
+.nav-15 a:hover::after,
+.nav-15 a:focus::after {
+    opacity: 0;
+    color: #000;
+    text-shadow: -10px 1px 8px #ffc, 10px -1px 8px #fff
+}
+
+/* Effect 16: Tiltedt Background */
+.nav-16 a {
+    overflow:hidden;
+    border: 2px solid #fff;
+}
+.nav-16 a::after {
+    display: block;
+  position: absolute;
+    width:100%;
+  top: 0%;
+  left: 0%;
+  content: attr(data-hover);
+    opacity: 0.5;
+    color: #fff;
+    background-color: #fff;
+    -webkit-transform: rotate(30deg);
+    -moz-transform: rotate(30deg);
+    transform: rotate(30deg);
+  -webkit-transition: -webkit-transform 0.4s, opacity 0.6s, color 0.1s 0.1s;
+  -moz-transition: -moz-transform 0.4s, opacity 0.6s, color 0.1s 0.1s;
+  transition: transform 0.4s, opacity 0.6s, color 0.1s 0.1s;
+}
+
+.nav-16 a:hover::after,
+.nav-16 a:focus::after {
+    opacity: 1;
+    color: #B64926;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
+
+/* Effect 17: Swapping border */
+.nav-17 a::after{
+    position:absolute;
+    content: '';
+    width: 50%;
+    height: 2px;
+    top: 30px;
+    right: 0;
+    background-color: #fff;
+    -webkit-transition: -webkit-transform 0.4s; 
+    -moz-transition: -moz-transform 0.4s;
+    transition: transform 0.4s;
+}
+.nav-17 a::before{
+    position: absolute;
+    content: '';
+    width: 50%;
+    height: 2px;
+    top: 30px;
+    left: 0;
+    background-color: #25405E;
+    -webkit-transition: -webkit-transform 0.4s; 
+    -moz-transition: -moz-transform 0.4s;
+    transition: transform 0.4s;
+}
+.nav-17 a:hover::after{
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    transform: translateX(-100%);
+}
+.nav-17 a:hover::before{
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    transform: translateX(100%);
+}
+
+/* Effect 18: Double rotation */
+.nav-18 a::before,
+.nav-18 a::after {
+    position: absolute;
+    content: attr(data-hover);
+    color: rgba(53, 44, 44, 0.59);
+    z-index: -1;
+    opacity: 0;
+    width: 100%;
+    right: 0;
+    -webkit-transition: -webkit-transform 1s, opacity 0.2s; 
+    -moz-transition: -moz-transform 1s, opacity 0.2s; 
+    transition: transform 1s, opacity 0.2s; 
+}
+
+.nav-18 a::after {
+    -webkit-transform-origin: left top;
+    -moz-transform-origin: left top;
+    transform-origin: left top;
+}
+
+.nav-18 a::before {
+    -webkit-transform-origin: right bottom;
+    -moz-transform-origin: right bottom;
+    transform-origin: right bottom;
+}
+
+.nav-18 a:hover::before,
+.nav-18 a:hover::after{
+    -webkit-transform:rotatex(360deg);
+    -moz-transform:rotatex(360deg);
+    transform:rotatex(360deg);
+    opacity: 0.8;
+    z-index: 1;
+}
+
+/* Effect 19: Double borders */
+.nav-19 a {
+    padding: 5px;
+    text-shadow: -1px 1px 8px #fff;
+}
+.nav-19 a::after,
+.nav-19 a::before {
+    position: absolute;
+    content: "";
+    opacity: 1;
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    -webkit-transition: width 0.4s 0.1s;
+    -moz-transition: width 0.4s 0.1s;
+    transition: width 0.4s 0.1s;
+}
+.nav-19 a::after {
+    top: 94%;
+    left: 0;
+}
+
+.nav-19 a::before {
+    top: 0;
+    right: 0;
+}
+.nav-19 a:hover::after,
+.nav-19 a:hover::before {
+    width: 100%;
+}
+
+/* Effect 20: Dancing Corners */
+.nav-20 a {
+    border: 2px solid #fff;
+    overflow: hidden;
+    padding: 5px;
+}
+.nav-20 a::before,
+.nav-20 a::after {
+  display: block;
+    position: absolute;
+    top: 0;
+    left: 53%;
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+    content: '';
+  opacity: 0.5;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  -webkit-transition: -webkit-transform 0.4s, width 0.3s, opacity 0.6s;
+  -moz-transition: -moz-transform 0.4s, opacity 0.6s, left 0.5s;
+  transition: transform 0.4s, opacity 0.6s, left 0.5s;
+}
+.nav-20 a::after {
+    left: -53%;
+}
+
+.nav-20 a:hover::before,
+.nav-20 a:hover::before,
+.nav-20 a:hover::after,
+.nav-20 a:focus::after {
+    opacity: 0.5;
+    -webkit-transform: rotate(-135deg);
+    -moz-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+}
