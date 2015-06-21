@@ -5,9 +5,7 @@ include('source.php');
 ?>
 
 
-
-
-
+<strong>Echo data</strong>
 
 
 <?php 
@@ -17,7 +15,6 @@ echo 'Category name: '. $categories['name'] . '<br>';
 
 ?>
 
-<strong>Echo data</strong>
 
 <?php 
 require('footer.php');

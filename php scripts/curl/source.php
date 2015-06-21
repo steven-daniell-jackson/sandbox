@@ -58,15 +58,16 @@ $APIResource = "product-categories";
  // or
  // print_r($cresult);
 
-$myArray = json_decode($cresult, true);
+$productArray = json_decode($cresult, true);
 // print_r ($myArray); // Fetches the first ID
 	}
 	// echo PHP_EOL . PHP_EOL;
 	// sleep(0.1);
 // }
 
+print_r($productArray);
 
-$product_categories = $myArray['response']['product-categories']['set-1']['nodelist']['10']['children'];
+$product_categories = $productArray['response']['product-categories']['set-1']['nodelist']['10']['children'];
 curl_close($curl);
 
 ?>
