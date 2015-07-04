@@ -1,4 +1,13 @@
+<!-- 
 
+CS Cart CSV Import script 
+Steven Jackson
+Started 7 July 2015
+
+Manipulation of CSV files
+
+
+-->
 
 <!DOCTYPE html>
 <html>
@@ -20,7 +29,17 @@
 
 <?php 
 
-// File values
+$product_validation_file = "cscart_product_fields.csv";
+
+
+// CS Cart product fields
+$product_validation_file_handle = fopen("$product_validation_file","r");  //  Open file containing available field names
+$product_validation_fields = fgetcsv($product_validation_file_handle); // Storing array of values
+fclose($product_validation_file_handle); //  Close validation file after accessing data
+
+
+
+// Uploaded File values
 $file = $_GET["csv"];
 $extension =  substr($file, strpos($file, '.') + 1);
 
@@ -32,19 +51,39 @@ if (file_exists($file) && $extension == 'csv') {
 
 $file = fopen("$file","r");
 $field_names = fgetcsv($file);
-
+fclose($file); //  Close file after accessing data
 
 
 
 // Displaying Field/Table names
- 
 
 echo "<br><br>";//  Display purposes
 
-// Looping through each array element
+// Looping through each product array element
 foreach ($field_names as $field_name) {
+
+//Validator to compare field names to the current available CS Cart list
+if (in_array($field_name, $product_validation_fields)) {
+
+	// Conditional - Remove Case formatting from SEO field
+if ($field_name == 'SEO name'){
+
 	echo $field_name . " , ";
+}else {
+
+	$textCaptital = ucfirst(strtolower($field_name));
+
+	echo $textCaptital . " , ";
 }
+
+} else { //End if search function
+
+echo "$field_name is not valid field in CS Cart. Please consult the available fields list";
+
+} //End else search function
+
+ 
+} //End For Each
 
 
 
@@ -87,7 +126,6 @@ echo $product_count;
 // print_r($field_names);
 
 
-fclose($file); //  Close file after accessing data
 
 
 
@@ -96,8 +134,9 @@ fclose($file); //  Close file after accessing data
 
 
 
+// Endif of File extension validation
 }
-else {
+else { 
 
 	echo "<br>Incorrect file format uploaded. <br>Only .csv extensions allowed";
 }
