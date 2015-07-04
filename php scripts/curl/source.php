@@ -1,8 +1,8 @@
 <?php
 
 set_time_limit(0);
-//header("Access-Control-Allow-Orgin: *");
-//header("Access-Control-Allow-Methods: *");
+header("Access-Control-Allow-Orgin: *");
+header("Access-Control-Allow-Methods: *");
 //header("Content-Type: application/json; charset=utf-8");
 function GenRandString($length = 16) {
 	$characters =
@@ -17,9 +17,9 @@ function GenRandString($length = 16) {
 $APIBaseURI = "http://api.ftgsys.co.za";
 $APIVersion = "v1";
 // private key must not be transmitted as arg else API access will be disabled – dummy data, replace // with supplied value:
-$APIPrivateKey = '2DKzHh2NJMtouBLhbBiWLbTd+OMk2RiL4n+CHqdliR4=';
+$APIPrivateKey = '';
 // client has to have a public and user key – dummy data, replace with supplied value:
-$APIPublicKey = 'q9w5HAivhgCXsj4f';
+$APIPublicKey = '';
 $APIUserKey = 1876; // dummy data, replace with supplied value:
 $APIResource = "product-categories";
 
