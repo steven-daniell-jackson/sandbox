@@ -1,0 +1,26 @@
+<php 
+
+
+
+
+
+
+//  // Displaying 10 Products
+
+// $file = fopen("$file","r"); //  Open uploaded file	
+
+// $product_count = 0;
+
+// while(!feof($file)&& $product_count < 10)
+//   {
+//   print_r(fgetcsv($file));
+
+
+// echo $product_count;
+//   $product_count += 1;
+//   }
+// fclose($file); //  Close file after accessing data
+
+
+// Printing data as an Array
+// print_r($field_names);
