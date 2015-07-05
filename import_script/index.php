@@ -18,18 +18,18 @@ Manipulation of CSV files
 
 
 
-<form action="index.php">
-	
-<input type="file" name="csv" value="CSV">
-<input type="submit" name="submit" value="Submit">
+	<form action="index.php">
+		
+		<input type="file" name="csv" value="CSV">
+		<input type="submit" name="submit" value="Submit">
 
-</form>
+	</form>
 
 
 
-<?php 
+	<?php 
 
-$product_validation_file = "cscart_product_fields.csv";
+	$product_validation_file = "cscart_product_fields.csv";
 
 
 // CS Cart product fields
@@ -49,8 +49,8 @@ if (file_exists($file) && $extension == 'csv') {
 	
 
 
-$file = fopen("$file","r");
-$field_names = fgetcsv($file);
+	$file = fopen("$file","r");
+	$field_names = fgetcsv($file);
 fclose($file); //  Close file after accessing data
 
 
@@ -62,27 +62,34 @@ echo "<br><br>";//  Display purposes
 // Looping through each product array element
 foreach ($field_names as $field_name) {
 
+
+
+// Conditional - Remove Case formatting from SEO field
+	if ($field_name == 'SEO name'){
+
+		echo $field_name . "<br>";
+	} else {
+
+// Converting all fields to First character uppper case 
+		$textCaptital = ucfirst(strtolower($field_name));
+		echo $textCaptital . "<br>";
+	}
+
+
+
 //Validator to compare field names to the current available CS Cart list
-if (in_array($field_name, $product_validation_fields)) {
+	if (in_array($textCaptital, $product_validation_fields)) {
 
-	// Conditional - Remove Case formatting from SEO field
-if ($field_name == 'SEO name'){
 
-	echo $field_name . " , ";
-}else {
 
-	$textCaptital = ucfirst(strtolower($field_name));
-
-	echo $textCaptital . " , ";
-}
 
 } else { //End if search function
 
-echo "$field_name is not valid field in CS Cart. Please consult the available fields list";
+	echo "$field_name is not valid field in CS Cart. Please consult the available fields list";
 
 } //End else search function
 
- 
+
 } //End For Each
 
 
