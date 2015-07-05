@@ -10,12 +10,17 @@ Main functional file
 
 
 // File Includes
+include_once("inc/upload.php");
 include_once("inc/file_checker.php");
 include_once("inc/products_validator.php");
 
+// Retrieve filename if successful
+$fileName = fileValidation ();
 
-// Getting returned arrays from validation functions
-$field_names = upload_file_checker();
+// Get returned field values from validation functions using Uploaded file with timestamp
+$field_names = get_upload_file_field_data($fileName);
+
+// Get returned field values from all available CS Cart fields
 $product_validation_fields = product_validation_file_exists ();
 
 

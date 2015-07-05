@@ -14,6 +14,7 @@ Written from scrach
 Customize as you like.
 -->
 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -52,21 +53,11 @@ Customize as you like.
 	</form>
 </div>	
 
-<?php 
-
-require_once("inc/functions.php");
-
-?>
-
 <div class="col-md-12 text-center">
-<span>STATUS: <?php 
-
-//Displaying Error message depending on product field validation
-echo $result;
-
-?></span>
-</div>
-
+	<span style="color:red;">
+		ERROR: Incorrect file format uploaded. <br>Only .csv extensions allowed
+	</span>
+	</div>
 
 <div class="clearfix"></div>
 

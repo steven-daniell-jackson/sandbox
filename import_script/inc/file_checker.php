@@ -11,9 +11,6 @@ $GLOBALS['product_validation_drectory'] = "validator_csv/";
 $GLOBALS['product_validation_file_exists'] = "cscart_product_fields.csv";
 
 
-
-
-
 /* 
 *****************************************************************
 Product Validation/Comparison file function
@@ -44,44 +41,26 @@ return $product_validation_fields;
 
 
 
+
 /* 
 *****************************************************************
-Uploaded file checker function
+Populate array from uploaded File
 *****************************************************************
 */
 
-function upload_file_checker(){
+function get_upload_file_field_data($file){
 
-// Uploaded File name
-	$file = $_GET['file'];
-
-	// File extension and exists error handling
-	$extension =  substr($file, strpos($file, '.') + 1);
-
-	if (file_exists($file) && $extension == 'csv') {
+//If file exists then retrieve data
+	if (file_exists($file)) {
 
 	$fileHandle = fopen("$file","r"); //  Open uploaded file
 	$field_names = fgetcsv($fileHandle); //Writing values to array
 	fclose($fileHandle); //  Close file after accessing data
 
-// Displaying Field/Table names
-
-echo "<br><br>";//  Display purposes
-
-return $field_names;
+//Return field names from Uploaded CSV
+return $field_names ;
 
 // Endif of File extension validation
-}
-else { 
-
-	echo "<div class=\"col-md-12 text-center\">
-	<span style=\"color:red;\">
-		ERROR: Incorrect file format uploaded. <br>Only .csv extensions allowed
-	</span>
-	</div>
-	";
-
-die ();
 }
 
 } //End upload_file_checker function
