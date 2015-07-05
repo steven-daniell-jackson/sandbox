@@ -60,8 +60,6 @@ function upload_file_checker(){
 
 	if (file_exists($file) && $extension == 'csv') {
 
-
-
 	$fileHandle = fopen("$file","r"); //  Open uploaded file
 	$field_names = fgetcsv($fileHandle); //Writing values to array
 	fclose($fileHandle); //  Close file after accessing data
@@ -82,6 +80,7 @@ else {
 	</span>
 	</div>
 	";
+
 die ();
 }
 

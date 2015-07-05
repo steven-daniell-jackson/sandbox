@@ -40,6 +40,7 @@ function product_field_checker ($field_names, $product_validation_fields) {
 //Validator to compare field names to the current available CS Cart list
 			if (!in_array($textFormat, $product_validation_fields)) {
 
+// Error reporting
 	// If an error is found. Return  Error message
 				$errorMessage =  "
 				<span style=\"color:red;\">
@@ -78,25 +79,17 @@ TODO: Validation for Required fields (Product code)
 
 	} else { //Start else search function
 
-	// If no error is found. Return success message
-		return "<span style=\"color:green;\">SUCCESS: All fields are valid</span>";
-
-		
-	} //End else search function
-
-// Error reporting
-
-
-
 	
-
-
+	} //End else search function
 
 
 
 
 } //End ForEach loop
 
+// If no error is found. Return success message
+$errorMessage =  "<span style=\"color:green;\">SUCCESS: All fields are valid</span>";
+return $errorMessage;
 
 
 

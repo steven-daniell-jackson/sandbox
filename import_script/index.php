@@ -24,7 +24,7 @@ Customize as you like.
 	<title>CSV Import Script - Steven Jacskson</title>
 
 
-<!-- Stylessheets -->
+<!-- Stylesheets -->
 <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="css/custom.css">
 
@@ -34,7 +34,7 @@ Customize as you like.
 
 <div class="container">
 
-<header id="header" class="">
+<header id="header" class="col-md-12 text-center">
 	<h1>CS Cart CSV Product Field Verification</h1>
 </header><!-- /header -->
 
@@ -70,8 +70,8 @@ echo $result;
 
 <footer>
 <hr>
-<div class="col-md-6">Written by and maintained by Steven Jackson</div>
-<div class="col-md-6">Free to use for commercial and non-commercial use</div>
+<div class="col-md-6">Written and maintained by Steven Jackson</div>
+<div class="col-md-6">Free for commercial and non-commercial use</div>
 	
 	
 </footer>

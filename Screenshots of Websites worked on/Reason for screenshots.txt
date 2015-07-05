@@ -1,2 +1,0 @@
-1. Cannot upload the clients sites as there database contains business information
-2. Some screenshots are pitches that were built to show client or are staging sites that never went live
