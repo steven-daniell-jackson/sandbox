@@ -1,5 +1,5 @@
 
-	<?php 
+<?php 
 // Variables
 // $_FILES['file']['name'];
 

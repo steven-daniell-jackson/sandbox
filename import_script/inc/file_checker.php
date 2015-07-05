@@ -1,6 +1,10 @@
 <?php
 
-
+/* 
+*****************************************************************
+Product Validation/Comparison file function
+*****************************************************************
+*/
 
 function product_validation_file_exists (){
 
@@ -29,6 +33,11 @@ return $product_validation_fields;
 
 
 
+/* 
+*****************************************************************
+Uploaded file checker function
+*****************************************************************
+*/
 
 
 function upload_file_checker(){
