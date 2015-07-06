@@ -8,17 +8,19 @@ Global Variables
 *****************************************************************
 */
 
-// Validator path
-$GLOBALS['product_validation_drectory'] = "validator_csv/";
+// Global variables
+$GLOBALS['product_validation_directory'] = "validator_csv/";
 $GLOBALS['product_validation_file_exists'] = "cscart_product_fields.csv";
-
 $GLOBALS['error_message'] = '';
+$GLOBALS['filePath']  = '';
+$GLOBALS['fileName'] = '';
 
-// Retrieve filename if successful
-$fileName = fileValidation ();
+
+// Retrieve filepath if successful
+$GLOBALS['filePath'] =  fileValidation ();
 
 // Get returned field values from validation functions using Uploaded file with timestamp
-$field_names = get_upload_file_field_data($fileName);
+$field_names = get_upload_file_field_data($GLOBALS['filePath']);
 
 // Get returned field values from all available CS Cart fields
 $product_validation_fields = product_validation_file_exists ();
@@ -39,7 +41,7 @@ Uploaded file validation function
 function fileValidation (){
 
 // Set upload directory
-	$uploadDirectory = "csv_uploads/";
+	$GLOBALS['uploadDirectory'] = "csv_uploads/";
 
 // Create date/time stamp
 	$timestamp = date('d:m:Y:H:i:s');
@@ -47,6 +49,7 @@ function fileValidation (){
 
 // Get filename
 	$filename = basename($_FILES ["file"]["name"]);
+	$GLOBALS['fileName'] = $filename;
 
 // File extension
 	$extension =  substr($filename, strpos($filename, '.') );
@@ -57,7 +60,7 @@ function fileValidation (){
 	$compiledFilename = $pureFilename . "_" . $timestamp . $extension;
 
 // Completed directory path and Filename
-	$tar =  $uploadDirectory . $compiledFilename;
+	$tar =  $GLOBALS['uploadDirectory'] . $compiledFilename;
 
 // Conditional check: File extenstion
 	if (isset($_POST["submit"]) && $extension == ".csv" ) {
@@ -66,7 +69,7 @@ function fileValidation (){
 		if (move_uploaded_file($_FILES["file"]["tmp_name"] , $tar)) {
 
 	// Notification
-			echo "<div class=\"col-md-12 text-center\">Your file \"<strong>". basename( $_FILES["file"]["name"]) . "\"</strong> has been uploaded.</div>";
+			echo "<div class=\"col-md-12 text-center\">Your file \"<strong>". basename( $_FILES["file"]["name"]) . "\"</strong> has been uploaded successfully.</div>";
 
         //Return File path and Filename
 			return "./". $tar;
@@ -98,11 +101,6 @@ function get_upload_file_field_data($file){
 
 	$fileHandle = fopen("$file","r"); //  Open uploaded file
 	$field_names = fgetcsv($fileHandle); //Writing values to array
-
-
-
-
-
 	fclose($fileHandle); //  Close file after accessing data
 
 //Return field names from Uploaded CSV
@@ -123,7 +121,7 @@ GET Product Validation/Comparison file data function
 
 function product_validation_file_exists (){
 
-	$product_validation_full_path = $GLOBALS['product_validation_drectory'] . $GLOBALS['product_validation_file_exists'];
+	$product_validation_full_path = $GLOBALS['product_validation_directory'] . $GLOBALS['product_validation_file_exists'];
 
 //CS CArt available fields
 	if (file_exists($product_validation_full_path)) {
@@ -137,7 +135,13 @@ return $product_validation_fields;
 
 } else {
 
-	echo "$product_validation_file does not exist within the /$product_validation_drectory drectory";
+$GLOBALS['error_message'] = '"'. $GLOBALS['product_validation_directory'] . $GLOBALS['product_validation_file_exists'] . '" does not exist.';
+
+
+// Load template part conditional "case_sensitivity" if everything is successful
+	$template_part = "validation_file_missing";
+	die(include ('template_part.php'));
+
 }
 
 
@@ -163,7 +167,12 @@ function product_field_checker ($field_names, $product_validation_fields) {
 //If first field name is empty do nothing
 	if (empty($field_names[0])){
 
-	// Load template part conditional "file_empty" and kill page if file is empty
+	//If file exists then Delete file.
+		if (file_exists($GLOBALS['filePath'])) {
+			unlink($GLOBALS['filePath']);
+		}		
+
+		// Load template part conditional "file_empty" and kill page if file is empty
 		$template_part = "file_empty";
 		die(include ('template_part.php'));
 
@@ -189,7 +198,7 @@ function product_field_checker ($field_names, $product_validation_fields) {
 					$caseSensitivityErrorChecker = true;
 
 					 // $GLOBALS['error_message'] = $field_name;
-					 $GLOBALS['error_message'] = $GLOBALS['error_message'] . '&nbsp;"' . $field_name. '" => '. $textFormat . '<br/>';
+					$GLOBALS['error_message'] = $GLOBALS['error_message'] . '&nbsp;"' . $field_name. '" => '. $textFormat . '<br/>';
 				}
 
 				$arrayCount -= 1;
@@ -231,7 +240,7 @@ TODO: Validation for Required fields (Product code)
 */
 
 
-		
+
 
 
 		}  //End if search function
@@ -256,7 +265,7 @@ if ($caseSensitivityErrorChecker == false) {
 } else {
 
 	// Load template part conditional "case_sensitivity" if everything is successful
-$template_part = "case_sensitivity";
+	$template_part = "case_sensitivity";
 	include ('template_part.php');
 }
 

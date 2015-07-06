@@ -1,3 +1,12 @@
+<?php 
+/* 
+*****************************************************************
+Template Part: ALL VALID
+*****************************************************************
+*/
+?>
+
+
 <?php if ($template_part == "success"): ?>
 
 	<div class="col-md-12 text-center">
@@ -12,19 +21,45 @@
 
 	<div class="col-md-12 text-center">
 		<span style="color:orange;">
-		ERROR: <br>
-		The following field/s have the incorrect casing.<br>
-		Please adjust and reupload your csv.<br><br>
+			ERROR: <br>
+			The following field/s have the incorrect casing.<br>
+			Please adjust and reupload your csv.<br><br>
 			<?php echo  $GLOBALS['error_message']; ?>
 		</span>
 	</div>
 
+	<div class="clearfix"></div>
+
+	<footer>
+		<hr>
+		<div class="col-md-6">Written and maintained by <a href="https://github.com/steven-daniell-jackson">Steven Jackson</a></div>
+		<div class="col-md-6">Free for commercial and non-commercial use</div>
+
+
+	</footer>
+
+</div>
+
+
+</body>
+</html>
 
 <?php endif ?>
 
+<?php
+/*****************************************************************
+END TEMPLATE PART: ALL VALID
+ *****************************************************************/
+?>
 
 
-
+<?php 
+/* 
+*****************************************************************
+Template Part: INVALID FIELD NAME
+*****************************************************************
+*/
+?>
 
 <?php if ($template_part == "invalid_field"): ?>
 
@@ -36,39 +71,21 @@
 
 
 <?php endif ?>
+<?php
+/*****************************************************************
+END TEMPLATE PART: INVALID FIELD NAME
+*****************************************************************/
+?>
 
 
 
-
-<?php if ($template_part == "file_empty"): ?>
-
-	<div class="col-md-12 text-center">
-		<span style="color:red;">
-		<?php echo $GLOBALS['error_message'] ?>
-			ERROR: FILE is empty
-		</span>
-	</div>
-
-
-<div class="clearfix"></div>
-
-<footer>
-<hr>
-<div class="col-md-6">Written and maintained by <a href="https://github.com/steven-daniell-jackson">Steven Jackson</a></div>
-<div class="col-md-6">Free for commercial and non-commercial use</div>
-	
-	
-</footer>
-
-</div>
-
-
-</body>
-</html>
-<?php endif ?>
-
-
-
+<?php 
+/* 
+*****************************************************************
+Template Part: FILE ERROR
+*****************************************************************
+*/
+?>
 
 <?php if ($template_part == "file_error"): ?>
 
@@ -80,15 +97,15 @@
 
 
 
-<div class="clearfix"></div>
+	<div class="clearfix"></div>
 
-<footer>
-<hr>
-<div class="col-md-6">Written and maintained by <a href="https://github.com/steven-daniell-jackson">Steven Jackson</a></div>
-<div class="col-md-6">Free for commercial and non-commercial use</div>
-	
-	
-</footer>
+	<footer>
+		<hr>
+		<div class="col-md-6">Written and maintained by <a href="https://github.com/steven-daniell-jackson">Steven Jackson</a></div>
+		<div class="col-md-6">Free for commercial and non-commercial use</div>
+
+
+	</footer>
 
 </div>
 
@@ -99,3 +116,92 @@
 
 
 <?php endif ?>
+<?php
+/*****************************************************************
+END TEMPLATE PART: FILE ERROR
+ *****************************************************************/
+?>
+
+
+<?php 
+/* 
+*****************************************************************
+Template Part: FILE EMPTY
+*****************************************************************
+*/
+?>
+
+
+<?php if ($template_part == "file_empty"): ?>
+
+	<div class="col-md-12 text-center">
+		<span style="color:red;">
+			<?php echo $GLOBALS['error_message'] ?>
+			ERROR: FILE is empty <br>
+			"<?php echo $GLOBALS['fileName'] ?>"" has been DELETED!
+		</span>
+	</div>
+
+
+	<div class="clearfix"></div>
+
+	<footer>
+		<hr>
+		<div class="col-md-6">Written and maintained by <a href="https://github.com/steven-daniell-jackson">Steven Jackson</a></div>
+		<div class="col-md-6">Free for commercial and non-commercial use</div>
+
+
+	</footer>
+
+</div>
+
+
+</body>
+</html>
+<?php endif ?>
+<?php
+/*****************************************************************
+END TEMPLATE PART: FILE EMPTY
+ *****************************************************************/
+?>
+
+<?php 
+/* 
+*****************************************************************
+Template Part: CS Cart Validation File Missing
+*****************************************************************
+*/
+?>
+
+
+<?php if ($template_part == "validation_file_missing"): ?>
+
+	<div class="col-md-12 text-center">
+		<span style="color:red;">
+			<?php echo $GLOBALS['error_message'] ?>
+			Please confirm that the file is there and try again
+		</span>
+	</div>
+
+
+	<div class="clearfix"></div>
+
+	<footer>
+		<hr>
+		<div class="col-md-6">Written and maintained by <a href="https://github.com/steven-daniell-jackson">Steven Jackson</a></div>
+		<div class="col-md-6">Free for commercial and non-commercial use</div>
+
+
+	</footer>
+
+</div>
+
+
+</body>
+</html>
+<?php endif ?>
+<?php
+/*****************************************************************
+END TEMPLATE PART: CS Cart Validation File Missing
+ *****************************************************************/
+?>
