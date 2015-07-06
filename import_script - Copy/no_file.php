@@ -14,6 +14,7 @@ Written from scrach
 Customize as you like.
 -->
 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -51,12 +52,6 @@ Customize as you like.
 
 	</form>
 </div>	
-
-<?php 
-
-require_once("inc/functions.php");
-
-?>
 
 
 
