@@ -1,20 +1,3 @@
-<!-- 
-
-CS Cart CSV Import script 
-Steven Jackson
-Started 7 July 2015
-
-Description:
-Manipulation of CSV files
-For use with CS Cart to vaiidate CSV Product fields.
-
-
-Note: 
-Written from scrach
-Customize as you like.
--->
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -60,7 +43,7 @@ Customize as you like.
 <footer>
 <hr>
 <div class="col-md-6">Written and maintained by <a href="https://github.com/steven-daniell-jackson">Steven Jackson</a></div>
-<div class="col-md-6">Free for commercial and non-commercial use</div>
+<div class="col-md-6"></div>
 	
 	
 </footer>

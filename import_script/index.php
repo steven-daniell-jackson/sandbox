@@ -65,7 +65,7 @@ require_once("inc/functions.php");
 <footer>
 <hr>
 <div class="col-md-6">Written and maintained by <a href="https://github.com/steven-daniell-jackson">Steven Jackson</a></div>
-<div class="col-md-6">Free for commercial and non-commercial use</div>
+<div class="col-md-6"></div>
 	
 	
 </footer>

@@ -7,7 +7,7 @@ Global Variables
 */
 
 // Validator path
-$GLOBALS['product_validation_drectory'] = "validator_csv/";
+$GLOBALS['product_validation_directory'] = "validator_csv/";
 $GLOBALS['product_validation_file_exists'] = "cscart_product_fields.csv";
 
 
@@ -19,7 +19,7 @@ Product Validation/Comparison file function
 
 function product_validation_file_exists (){
 
-	$product_validation_full_path = $GLOBALS['product_validation_drectory'] . $GLOBALS['product_validation_file_exists'];
+	$product_validation_full_path = $GLOBALS['product_validation_directory'] . $GLOBALS['product_validation_file_exists'];
 
 //CS CArt available fields
 	if (file_exists($product_validation_full_path)) {
@@ -33,7 +33,8 @@ return $product_validation_fields;
 
 } else {
 
-	echo "$product_validation_file does not exist within the /$product_validation_drectory drectory";
+	echo $GLOBALS['product_validation_file_exists'] . " does not exist within the /" . $GLOBALS['product_validation_directory'] ." directory";
+	die();
 }
 
 
@@ -54,6 +55,7 @@ function get_upload_file_field_data($file){
 	if (file_exists($file)) {
 
 	$fileHandle = fopen("$file","r"); //  Open uploaded file
+
 	$field_names = fgetcsv($fileHandle); //Writing values to array
 	fclose($fileHandle); //  Close file after accessing data
 

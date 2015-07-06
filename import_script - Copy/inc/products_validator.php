@@ -35,6 +35,9 @@ $caseSensitivityErrorChecker = false;
 				// echo $textFormat . "<br>";
 
 if ($textFormat != $field_name) {
+
+	$warning = "<br><span style=\"color:orange;\">Warning: Case sensitivity issue : $field_name<br>";
+	$warning = $warning . "it should be $textFormat</span><br>";
 	$caseSensitivityErrorChecker = true;
 }
 
@@ -98,7 +101,7 @@ if ($caseSensitivityErrorChecker == false) {
 		$errorMessage = "<span style=\"color:green;\">SUCCESS: All fields are valid</span>";
 } else {
 
-	$warning = "<br><span style=\"color:orange;\">Warning: Case sensitivity issues</span><br>";
+	// $warning = "<br><span style=\"color:orange;\">Warning: Case sensitivity issues</span><br>";
 	$success = "<span style=\"color:green;\">SUCCESS: All fields are valid</span>";
 	$errorMessage =  $warning . $success;
 }
