@@ -54,7 +54,18 @@ Customize as you like.
 
 <?php 
 
+//If form has been submitted. Run the functions.php file
+if (isset($_POST["submit"])) {
+
 require_once("inc/functions.php");
+
+} else {
+
+// Else display nothing
+	$template_part = "homepage";
+	include ('template_part.php');
+}
+
 
 ?>
 

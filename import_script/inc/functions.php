@@ -29,9 +29,7 @@ $product_validation_fields = product_validation_file_exists ();
 // Passing verified values to product validator and retrieving result message (success/fail)
 product_field_checker($field_names, $product_validation_fields);
 
-
-
-
+ 
 /* 
 *****************************************************************
 Uploaded file validation function

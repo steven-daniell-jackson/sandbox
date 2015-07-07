@@ -1,5 +1,51 @@
 <?php 
+
+
 /* 
+*****************************************************************
+Template Part: Homepage
+*****************************************************************
+*/
+?>
+
+
+
+
+<?php if ($template_part == "homepage"): ?>
+
+	<div class="col-md-12 text-center">
+		<span style="color:orange;">
+			
+		</span>
+	</div>
+
+	<div class="clearfix"></div>
+
+	<footer>
+		<hr>
+		<div class="col-md-6">Written and maintained by <a href="https://github.com/steven-daniell-jackson">Steven Jackson</a></div>
+		<div class="col-md-6">Free for commercial and non-commercial use</div>
+
+
+	</footer>
+
+</div>
+
+
+</body>
+</html>
+
+<?php endif ?>
+
+<?php
+/*****************************************************************
+END TEMPLATE PART: Homepage
+ *****************************************************************/
+?>
+
+
+
+<?php/* 
 *****************************************************************
 Template Part: ALL VALID
 *****************************************************************
