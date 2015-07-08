@@ -2,17 +2,31 @@
 
 CS Cart CSV Import script 
 Steven Jackson
-Started 7 July 2015
+Started 8 July 2015
 
 Description:
-Manipulation of CSV files
-For use with CS Cart to vaiidate CSV Product fields.
+CSV Validator
+Based off my original CS Cart Product field validator
 
 
-Note: 
-Written from scrach
-Customize as you like.
 -->
+
+<?php 
+
+//If form has been submitted. Run the functions.php file
+if (isset($_POST["submit"])) {
+
+require_once("inc/functions.php");
+
+} else {
+
+// Else display nothing
+	$template_part = "homepage";
+	include ('template_part.php');
+}
+
+
+?>
 
 <!DOCTYPE html>
 <html>
@@ -52,21 +66,6 @@ Customize as you like.
 	</form>
 </div>	
 
-<?php 
 
-//If form has been submitted. Run the functions.php file
-if (isset($_POST["submit"])) {
-
-require_once("inc/functions.php");
-
-} else {
-
-// Else display nothing
-	$template_part = "homepage";
-	include ('template_part.php');
-}
-
-
-?>
 
 
