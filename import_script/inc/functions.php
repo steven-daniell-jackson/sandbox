@@ -3,6 +3,7 @@
 
 
 
+
 /* 
 *****************************************************************
 Custom Usage
@@ -15,10 +16,14 @@ Change the Global file name from "/validator_csv/cscart_product_fields.csv" to y
 To modify the upload directory. 
 Change the "upload_Directory" Global to the directory that you wish to use
 
+Note: 
+Don't worry. If the directory does not exist.
+It will be created.
 
 */
 $GLOBALS['product_validation_directory'] = "validator_csv/";
 $GLOBALS['product_validation_file_exists'] = "cscart_product_fields.csv";
+
 
 $GLOBALS['upload_Directory'] = "csv_uploads/";
 
@@ -74,13 +79,17 @@ function fileValidation (){
 // Compiled name with timestamp
 	$compiledFilename = $pureFilename . "_" . $timestamp . $extension;
 
-// Completed directory path and Filename
+
 
 if (!file_exists($GLOBALS['upload_Directory'])) {
+
+	// Completed directory path and Filename
+	$tar = './' . $GLOBALS['upload_Directory'] . $compiledFilename;
     mkdir($GLOBALS['upload_Directory'], 0777, true);
 } 
 
-	$tar =  $GLOBALS['upload_Directory'] . $compiledFilename;
+
+
 
 // Conditional check: File extenstion
 	if (isset($_POST["submit"]) && $extension == ".csv" ) {
