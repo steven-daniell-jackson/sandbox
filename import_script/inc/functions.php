@@ -80,12 +80,14 @@ function fileValidation (){
 	$compiledFilename = $pureFilename . "_" . $timestamp . $extension;
 
 
+// Completed directory path and Filename
+$tar = './' . $GLOBALS['upload_Directory'] . $compiledFilename;
 
 if (!file_exists($GLOBALS['upload_Directory'])) {
 
-	// Completed directory path and Filename
-	$tar = './' . $GLOBALS['upload_Directory'] . $compiledFilename;
-    mkdir($GLOBALS['upload_Directory'], 0777, true);
+	//If directory does not exist. Create it
+	$create_new_directory = './' . $GLOBALS['upload_Directory'];
+    mkdir($create_new_directory, 0777, true);
 } 
 
 
@@ -207,8 +209,21 @@ function product_field_checker ($field_names, $product_validation_fields) {
 
 	}
 
+// $product_code_array = array("Product code");
+	
+
 // Looping through each product array element
 	foreach ($field_names as $field_name) {
+
+	// Converting all fields to First character uppper case 
+	$textFormat = ucfirst(strtolower($field_name));
+
+// if (!in_array($product_code_array, $field_names)) {
+// 				$template_part = "invalid_field";
+// 				$GLOBALS['error_message'] = "Product code is compulsory";
+// 				die(include ('template_part.php'));
+
+// } 
 
 		if ($arrayCount > 0) {
 
@@ -220,8 +235,7 @@ function product_field_checker ($field_names, $product_validation_fields) {
 				$arrayCount -= 1;
 			} else {
 
-				// Converting all fields to First character uppper case 
-				$textFormat = ucfirst(strtolower($field_name));
+
 
 				if ($textFormat != $field_name) {
 					$caseSensitivityErrorChecker = true;
@@ -232,23 +246,6 @@ function product_field_checker ($field_names, $product_validation_fields) {
 
 				$arrayCount -= 1;
 			}
-
-
-
-			//Validator to compare field names to the current available CS Cart list
-			if (!in_array($textFormat, $product_validation_fields)) {
-
-				// Error reporting
-				// If an error is found. Return  Error message
-				
-				echo "ERROR: \"$field_name\" is not a valid field in CS Cart.";
-
-				$GLOBALS['error_message'] = $warning;
-
-				$template_part = "invalid_field";
-				include ('template_part.php');
-
-
 
 
 /* 
@@ -272,17 +269,34 @@ TODO: Validation for Required fields (Product code)
 
 
 
+			//Validator to compare field names to the current available CS Cart list
+			if (!in_array($textFormat, $product_validation_fields)) {
+
+
+
+				// Error reporting
+				// If an error is found. Return  Error message
+				
+				echo "ERROR: \"$field_name\" is not a valid field in CS Cart.";
+
+				$GLOBALS['error_message'] = $warning;
+
+				$template_part = "invalid_field";
+				include ('template_part.php');
+
+}
+
+
+
+
+
+
+
 		}  //End if search function
-
-	} else { //Start else search function
-
-
-	} //End else search function
-
-
-
-
 } //End ForEach loop
+
+
+
 
 if ($caseSensitivityErrorChecker == false) {
 

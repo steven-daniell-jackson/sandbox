@@ -79,13 +79,14 @@ function fileValidation (){
 // Compiled name with timestamp
 	$compiledFilename = $pureFilename . "_" . $timestamp . $extension;
 
-
+// Completed directory path and Filename
+$tar = './' . $GLOBALS['upload_Directory'] . $compiledFilename;
 
 if (!file_exists($GLOBALS['upload_Directory'])) {
 
-	// Completed directory path and Filename
-	$tar = './' . $GLOBALS['upload_Directory'] . $compiledFilename;
-    mkdir($GLOBALS['upload_Directory'], 0777, true);
+	//If directory does not exist. Create it
+	$create_new_directory = './' . $GLOBALS['upload_Directory'];
+    mkdir($create_new_directory, 0777, true);
 } 
 
 
