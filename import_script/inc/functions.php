@@ -3,7 +3,6 @@
 
 
 
-
 /* 
 *****************************************************************
 Custom Usage
@@ -76,6 +75,11 @@ function fileValidation (){
 	$compiledFilename = $pureFilename . "_" . $timestamp . $extension;
 
 // Completed directory path and Filename
+
+if (!file_exists($GLOBALS['upload_Directory'])) {
+    mkdir($GLOBALS['upload_Directory'], 0777, true);
+} 
+
 	$tar =  $GLOBALS['upload_Directory'] . $compiledFilename;
 
 // Conditional check: File extenstion
