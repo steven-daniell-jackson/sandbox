@@ -16,12 +16,16 @@ Change the Global file name from "/validator_csv/cscart_product_fields.csv" to y
 To modify the upload directory. 
 Change the "upload_Directory" Global to the directory that you wish to use
 
+Note: 
+Don't worry. If the directory does not exist.
+It will be created.
 
 */
 $GLOBALS['product_validation_directory'] = "validator_csv/";
 $GLOBALS['product_validation_file_exists'] = "cscart_product_fields.csv";
 
-$GLOBALS['upload_Directory'] = "csv_uploads2/";
+
+$GLOBALS['upload_Directory'] = "csv_uploads/";
 
 
 
@@ -243,28 +247,6 @@ function product_field_checker ($field_names, $product_validation_fields) {
 
 				$template_part = "invalid_field";
 				include ('template_part.php');
-
-
-
-
-/* 
-*****************************************************************
-******************************************************************
-******************************************************************
-******************************************************************
-******************************************************************
-*****************************************************************
-TODO: Validation for Required fields (Product code)
-*****************************************************************
-******************************************************************
-******************************************************************
-******************************************************************
-******************************************************************
-******************************************************************
-******************************************************************
-*/
-
-
 
 
 
