@@ -2,15 +2,35 @@
 <?php 
 
 
+
+
+/* 
+*****************************************************************
+Custom Usage
+*****************************************************************
+
+Upload your CSV to the /validator_csv/ directory or change the below global to the path you wish to use.
+Change the Global file name from "/validator_csv/cscart_product_fields.csv" to your /YOuR_directory/YOUR_filename.csv
+
+
+To modify the upload directory. 
+Change the "upload_Directory" Global to the directory that you wish to use
+
+
+*/
+$GLOBALS['product_validation_directory'] = "validator_csv/";
+$GLOBALS['product_validation_file_exists'] = "cscart_product_fields.csv";
+
+$GLOBALS['upload_Directory'] = "csv_uploads/";
+
+
+
 /* 
 *****************************************************************
 Global Variables
 *****************************************************************
 */
 
-// Global variables
-$GLOBALS['product_validation_directory'] = "validator_csv/";
-$GLOBALS['product_validation_file_exists'] = "cscart_product_fields.csv";
 $GLOBALS['error_message'] = '';
 $GLOBALS['filePath']  = '';
 $GLOBALS['fileName'] = '';
@@ -38,8 +58,6 @@ Uploaded file validation function
 
 function fileValidation (){
 
-// Set upload directory
-	$GLOBALS['uploadDirectory'] = "csv_uploads/";
 
 // Create date/time stamp
 	$timestamp = date('d:m:Y:H:i:s');
@@ -58,7 +76,7 @@ function fileValidation (){
 	$compiledFilename = $pureFilename . "_" . $timestamp . $extension;
 
 // Completed directory path and Filename
-	$tar =  $GLOBALS['uploadDirectory'] . $compiledFilename;
+	$tar =  $GLOBALS['upload_Directory'] . $compiledFilename;
 
 // Conditional check: File extenstion
 	if (isset($_POST["submit"]) && $extension == ".csv" ) {
