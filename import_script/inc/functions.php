@@ -233,6 +233,12 @@ if ($textFormat != $field_names[$found] ) {
 //If the required Field does not exist in the array. Display error 
 	$GLOBALS['error_message'] = "ERROR: \"". $requiredField ."\" is a required field in CS Cart. Please add it";
 
+
+//If file exists then Delete file.
+		if (file_exists($GLOBALS['filePath'])) {
+			unlink($GLOBALS['filePath']);
+		}		
+
 		$template_part = "invalid_field";
 		die(include ('template_part.php'));
 
@@ -242,6 +248,11 @@ if ($textFormat != $field_names[$found] ) {
 //If the required Field does exist in the array but case sensitivity is incorrect. Display error 
 $GLOBALS['error_message'] = "ERROR: \"". $field_names[$found] ."\" Has the incorrect case structure<br>It should be \"" . $requiredField ."\"<br>
 Please correct  this and upload your csv again";
+
+//If file exists then Delete file.
+		if (file_exists($GLOBALS['filePath'])) {
+			unlink($GLOBALS['filePath']);
+		}		
 
 		$template_part = "invalid_field";
 		die(include ('template_part.php'));
