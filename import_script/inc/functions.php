@@ -27,6 +27,10 @@ $GLOBALS['upload_Directory'] = "csv_uploads/";
 
 
 
+//Required field array
+$GLOBALS['product_code_array'] = array("Product code", "Language");
+
+
 /* 
 *****************************************************************
 Global Variables
@@ -177,7 +181,6 @@ $GLOBALS['error_message'] = '"'. $GLOBALS['product_validation_directory'] . $GLO
 } //End product_validation_file_exists function
 
 
-
 /* 
 *****************************************************************
 Product field validator function
@@ -209,24 +212,47 @@ function product_field_checker ($field_names, $product_validation_fields) {
 
 
 
-//Require field array
-$product_code_array = array("Product code");
-
-
 //Checks current array if the required fields are in it or throws an error
-			if (!in_array($product_code_array, $field_names)) {
+
+// Looping through each required product array element
+ foreach ($GLOBALS['product_code_array'] as $requiredField) {
+
+//Finds the element location
+$found = array_search($requiredField, $field_names, true);
+
+//Capitalizes the field
+$textFormat = ucfirst(strtolower($field_names[$found]));
 
 
-				// Error reporting
-				// If an error is found. Return  Error message
 
-				$GLOBALS['error_message'] = "ERROR: ". $product_code_array[0] ." is a required field in CS Cart. Please add it";
+// Compares the values and displays different errors depending on the issue
+if ($textFormat != $field_names[$found] ) {
+
+	if ($textFormat != $requiredField){
+
+//If the required Field does not exist in the array. Display error 
+	$GLOBALS['error_message'] = "ERROR: \"". $requiredField ."\" is a required field in CS Cart. Please add it";
+
+		$template_part = "invalid_field";
+		die(include ('template_part.php'));
+
+} else {
 
 
-				$template_part = "invalid_field";
-				die(include ('template_part.php'));
-			}
-	
+//If the required Field does exist in the array but case sensitivity is incorrect. Display error 
+$GLOBALS['error_message'] = "ERROR: \"". $field_names[$found] ."\" Has the incorrect case structure<br>It should be \"" . $requiredField ."\"<br>
+Please correct  this and upload your csv again";
+
+		$template_part = "invalid_field";
+		die(include ('template_part.php'));
+
+		}
+
+	}
+
+}
+		
+
 
 // Looping through each product array element
 	foreach ($field_names as $field_name) {
@@ -246,8 +272,10 @@ $product_code_array = array("Product code");
 			} else {
 
 
-
+				// Case Sensitivy checker. Concatanates error message and reports all issues.
 				if ($textFormat != $field_name) {
+
+					// Case sensitivity flag
 					$caseSensitivityErrorChecker = true;
 
 					 // $GLOBALS['error_message'] = $field_name;
@@ -261,12 +289,9 @@ $product_code_array = array("Product code");
 			//Validator to compare field names to the current available CS Cart list
 			if (!in_array($textFormat, $product_validation_fields)) {
 
-
-
 				// Error reporting
-				// If an error is found. Return  Error message
-				
-				echo "ERROR: \"$field_name\" is not a valid field in CS Cart.";
+				// If an error is found. Return  Error message	
+				$warning = "ERROR: \"$field_name\" is not a valid field in CS Cart.";
 
 				$GLOBALS['error_message'] = $warning;
 
