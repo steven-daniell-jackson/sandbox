@@ -17,23 +17,15 @@ Template Part: Homepage
 		</span>
 	</div>
 
-	<div class="clearfix"></div>
 
-	<footer>
-		<hr>
-		<div class="col-md-6">Written and maintained by <a href="https://github.com/steven-daniell-jackson">Steven Jackson</a></div>
-		<div class="col-md-6">Free for commercial and non-commercial use</div>
+require_once ("inc/footer.php");
 
 
-	</footer>
+<?php 
 
-</div>
+require_once ("inc/footer.php");
 
-
-</body>
-</html>
-
-<?php endif ?>
+endif ?>
 
 <?php
 /*****************************************************************
@@ -58,7 +50,11 @@ Template Part: ALL VALID
 		<span style=\"color:green;\">Your Field values have been verified and can be uploaded without error</span>
 	</div>
 
-<?php endif ?>
+<?php 
+
+require_once ("inc/footer.php");
+
+endif ?>
 
 <?php
 /*****************************************************************
@@ -87,23 +83,12 @@ Template Part: INCORRECT CASE SENSITIVITY
 		</span>
 	</div>
 
-	<div class="clearfix"></div>
 
-	<footer>
-		<hr>
-		<div class="col-md-6">Written and maintained by <a href="https://github.com/steven-daniell-jackson">Steven Jackson</a></div>
-		<div class="col-md-6">Free for commercial and non-commercial use</div>
+<?php 
 
+require_once ("inc/footer.php");
 
-	</footer>
-
-</div>
-
-
-</body>
-</html>
-
-<?php endif ?>
+endif ?>
 
 <?php
 /*****************************************************************
@@ -128,14 +113,46 @@ Template Part: INVALID FIELD NAME
 		</span>
 	</div>
 
+<?php 
 
-<?php endif ?>
+require_once ("inc/footer.php");
+
+endif ?>
 <?php
 /*****************************************************************
 END TEMPLATE PART: INVALID FIELD NAME
 *****************************************************************/
 ?>
 
+
+
+<?php 
+/* 
+*****************************************************************
+Template Part: Required fields
+*****************************************************************
+*/
+?>
+
+<?php if ($template_part == "required_field"): ?>
+
+	<div class="col-md-12 text-center">
+		<span style="color:red;">
+			<?php echo $GLOBALS['error_message']; ?>
+		</span>
+	</div>
+
+
+<?php 
+
+require_once ("inc/footer.php");
+
+endif ?>
+<?php
+/*****************************************************************
+END TEMPLATE PART: FILE ERROR
+ *****************************************************************/
+?>
 
 
 <?php 
@@ -155,26 +172,11 @@ Template Part: FILE ERROR
 	</div>
 
 
+<?php 
 
-	<div class="clearfix"></div>
+require_once ("inc/footer.php");
 
-	<footer>
-		<hr>
-		<div class="col-md-6">Written and maintained by <a href="https://github.com/steven-daniell-jackson">Steven Jackson</a></div>
-		<div class="col-md-6">Free for commercial and non-commercial use</div>
-
-
-	</footer>
-
-</div>
-
-
-</body>
-</html>
-
-
-
-<?php endif ?>
+endif ?>
 <?php
 /*****************************************************************
 END TEMPLATE PART: FILE ERROR
@@ -201,23 +203,11 @@ Template Part: FILE EMPTY
 		</span>
 	</div>
 
+<?php 
 
-	<div class="clearfix"></div>
+require_once ("inc/footer.php");
 
-	<footer>
-		<hr>
-		<div class="col-md-6">Written and maintained by <a href="https://github.com/steven-daniell-jackson">Steven Jackson</a></div>
-		<div class="col-md-6">Free for commercial and non-commercial use</div>
-
-
-	</footer>
-
-</div>
-
-
-</body>
-</html>
-<?php endif ?>
+endif ?>
 <?php
 /*****************************************************************
 END TEMPLATE PART: FILE EMPTY
@@ -243,22 +233,11 @@ Template Part: CS Cart Validation File Missing
 	</div>
 
 
-	<div class="clearfix"></div>
+<?php 
 
-	<footer>
-		<hr>
-		<div class="col-md-6">Written and maintained by <a href="https://github.com/steven-daniell-jackson">Steven Jackson</a></div>
-		<div class="col-md-6">Free for commercial and non-commercial use</div>
+require_once ("inc/footer.php");
 
-
-	</footer>
-
-</div>
-
-
-</body>
-</html>
-<?php endif ?>
+endif ?>
 <?php
 /*****************************************************************
 END TEMPLATE PART: CS Cart Validation File Missing
