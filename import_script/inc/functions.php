@@ -27,7 +27,12 @@ $GLOBALS['upload_Directory'] = "csv_uploads/";
 
 
 
-//Required field array
+// Required field array
+
+
+// Replace below $Global with $GLOBALS['product_code_array'] = array ();
+// If there are no required field/s
+
 $GLOBALS['product_code_array'] = array("Product code", "Language");
 
 
@@ -55,7 +60,7 @@ $product_validation_fields = product_validation_file_exists ();
 // Passing verified values to product validator and retrieving result message (success/fail)
 product_field_checker($field_names, $product_validation_fields);
 
- 
+
 /* 
 *****************************************************************
 Uploaded file validation function
@@ -65,53 +70,52 @@ Uploaded file validation function
 function fileValidation (){
 
 
-// Create date/time stamp
+	// Create date/time stamp
 	$timestamp = date('d:m:Y:H:i:s');
 	$timestamp = str_replace(':', '', $timestamp);
 
-// Get filename
+	// Get filename
 	$filename = basename($_FILES ["file"]["name"]);
 	$GLOBALS['fileName'] = $filename;
 
-// File extension
+	// File extension
 	$extension =  substr($filename, strpos($filename, '.') );
 	$beforeExtension = $extension .  $timestamp;
 	$pureFilename = substr($filename, 0, strpos($filename, '.') );
 
-// Compiled name with timestamp
+	// Compiled name with timestamp
 	$compiledFilename = $pureFilename . "_" . $timestamp . $extension;
 
 
-// Completed directory path and Filename
-$tar = './' . $GLOBALS['upload_Directory'] . $compiledFilename;
+	// Completed directory path and Filename
+	$tar = './' . $GLOBALS['upload_Directory'] . $compiledFilename;
 
-if (!file_exists($GLOBALS['upload_Directory'])) {
+	if (!file_exists($GLOBALS['upload_Directory'])) {
 
 	//If directory does not exist. Create it
-	$create_new_directory = './' . $GLOBALS['upload_Directory'];
-    mkdir($create_new_directory, 0777, true);
-} 
+		$create_new_directory = './' . $GLOBALS['upload_Directory'];
+		mkdir($create_new_directory, 0777, true);
+	} 
 
 
 
 
-// Conditional check: File extenstion
+	// Conditional check: File extenstion
 	if (isset($_POST["submit"]) && $extension == ".csv" ) {
 
-//Upload File file with 
+		//Upload File file with 
 		if (move_uploaded_file($_FILES["file"]["tmp_name"] , $tar)) {
 
-	// Notification
+			// Notification
 			echo "<div class=\"col-md-12 text-center\">Your file \"<strong>". basename( $_FILES["file"]["name"]) . "\"</strong> has been uploaded successfully.</div>";
 
-        //Return File path and Filename
+      	  //Return File path and Filename
 			return "./". $tar;
 		} 
 
 	}else {
 
-	// Load template part conditional "file_error" and kill page if file format is incorrect
-
+		// Load template part conditional "file_error" and kill page if file format is incorrect
 		$template_part = "file_error";
 		die(include ('template_part.php'));
 
@@ -129,18 +133,18 @@ Populate array from uploaded File
 
 function get_upload_file_field_data($file){
 
-//If file exists then retrieve data
+	//If file exists then retrieve data
 	if (file_exists($file) ) {
 
 	$fileHandle = fopen("$file","r"); //  Open uploaded file
 	$field_names = fgetcsv($fileHandle); //Writing values to array
 	fclose($fileHandle); //  Close file after accessing data
 
-//Return field names from Uploaded CSV
+	//Return field names from Uploaded CSV
 	return $field_names ;
 
-// Endif of File extension validation
-}
+
+	}// Endif of File extension validation
 
 } //End upload_file_checker function
 
@@ -156,7 +160,7 @@ function product_validation_file_exists (){
 
 	$product_validation_full_path = $GLOBALS['product_validation_directory'] . $GLOBALS['product_validation_file_exists'];
 
-//CS CArt available fields
+	//CS CArt available fields
 	if (file_exists($product_validation_full_path)) {
 
 // CS Cart product fields
@@ -168,10 +172,10 @@ return $product_validation_fields;
 
 } else {
 
-$GLOBALS['error_message'] = '"'. $GLOBALS['product_validation_directory'] . $GLOBALS['product_validation_file_exists'] . '" does not exist.';
+	$GLOBALS['error_message'] = '"'. $GLOBALS['product_validation_directory'] . $GLOBALS['product_validation_file_exists'] . '" does not exist.';
 
 
-// Load template part conditional "case_sensitivity" if everything is successful
+	// Load template part conditional "case_sensitivity" if everything is successful
 	$template_part = "validation_file_missing";
 	die(include ('template_part.php'));
 
@@ -189,17 +193,17 @@ Product field validator function
 
 function product_field_checker ($field_names, $product_validation_fields) {
 
-// Array count value
+	// Array count value
 	$arrayCount = count($field_names);
 
-//Case sensitivity checker
+	//Case sensitivity checker
 	$caseSensitivityErrorChecker = false;
 
 
-//If first field name is empty do nothing
+	//If first field name is empty do nothing
 	if (empty($field_names[0])){
 
-	//If file exists then Delete file.
+		//If file exists then Delete file.
 		if (file_exists($GLOBALS['filePath'])) {
 			unlink($GLOBALS['filePath']);
 		}		
@@ -214,62 +218,66 @@ function product_field_checker ($field_names, $product_validation_fields) {
 
 //Checks current array if the required fields are in it or throws an error
 
-// Looping through each required product array element
- foreach ($GLOBALS['product_code_array'] as $requiredField) {
+	// Looping through each required product array element
+	foreach ($GLOBALS['product_code_array'] as $requiredField) {
 
-//Finds the element location
-$found = array_search($requiredField, $field_names, true);
+		//Finds the element location
+		$found = array_search($requiredField, $field_names, true);
 
-//Capitalizes the field
-$textFormat = ucfirst(strtolower($field_names[$found]));
+		//Capitalizes the field
+		$textFormat = ucfirst(strtolower($field_names[$found]));
 
+if (!empty($GLOBALS['product_code_array'])){
 
+		// Compares the values and displays different errors depending on the issue
+		if ($textFormat != $field_names[$found] ) {
 
-// Compares the values and displays different errors depending on the issue
-if ($textFormat != $field_names[$found] ) {
+			if ($textFormat != $requiredField){
 
-	if ($textFormat != $requiredField){
-
-//If the required Field does not exist in the array. Display error 
-	$GLOBALS['error_message'] = "ERROR: \"". $requiredField ."\" is a required field in CS Cart. Please add it";
-
-
-//If file exists then Delete file.
-		if (file_exists($GLOBALS['filePath'])) {
-			unlink($GLOBALS['filePath']);
-		}		
-
-		$template_part = "invalid_field";
-		die(include ('template_part.php'));
-
-} else {
+				//If the required Field does not exist in the array. Display error 
+				$GLOBALS['error_message'] = "ERROR: \"". $requiredField ."\" is a required field in CS Cart. Please add it";
 
 
-//If the required Field does exist in the array but case sensitivity is incorrect. Display error 
-$GLOBALS['error_message'] = "ERROR: \"". $field_names[$found] ."\" Has the incorrect case structure<br>It should be \"" . $requiredField ."\"<br>
-Please correct  this and upload your csv again";
+				//If file exists then Delete file.
+				if (file_exists($GLOBALS['filePath'])) {
+					unlink($GLOBALS['filePath']);
+				}		
 
-//If file exists then Delete file.
-		if (file_exists($GLOBALS['filePath'])) {
-			unlink($GLOBALS['filePath']);
-		}		
+				// Load invalid field template part
+				$template_part = "invalid_field";
+				die(include ('template_part.php'));
 
-		$template_part = "invalid_field";
-		die(include ('template_part.php'));
+			} else {
+
+
+				//If the required Field does exist in the array but case sensitivity is incorrect. Display error 
+				$GLOBALS['error_message'] = "ERROR: \"". $field_names[$found] ."\" Has the incorrect case structure<br>It should be \"" . $requiredField ."\"<br>
+				Please correct  this and upload your csv again";
+
+				//If file exists then Delete file.
+				if (file_exists($GLOBALS['filePath'])) {
+					unlink($GLOBALS['filePath']);
+				}		
+
+				// Load invalid field template part
+				$template_part = "invalid_field";
+				die(include ('template_part.php'));
+
+			}
 
 		}
 
 	}
 
 }
-		
 
 
-// Looping through each product array element
+
+	// Looping through each product array element
 	foreach ($field_names as $field_name) {
 
-	// Converting all fields to First character uppper case 
-	$textFormat = ucfirst(strtolower($field_name));
+		// Converting all fields to First character uppper case 
+		$textFormat = ucfirst(strtolower($field_name));
 
 
 		if ($arrayCount > 0) {
@@ -306,10 +314,11 @@ Please correct  this and upload your csv again";
 
 				$GLOBALS['error_message'] = $warning;
 
+				// Load invalid field template part
 				$template_part = "invalid_field";
 				include ('template_part.php');
 
-				}
+			}
 
 
 		}  //End if search function
