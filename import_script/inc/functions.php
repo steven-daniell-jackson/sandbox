@@ -1,9 +1,6 @@
 
 <?php 
 
-
-
-
 /* 
 *****************************************************************
 Custom Usage
@@ -21,6 +18,7 @@ Don't worry. If the directory does not exist.
 It will be created.
 
 */
+
 $GLOBALS['product_validation_directory'] = "validator_csv/";
 $GLOBALS['product_validation_file_exists'] = "cscart_product_fields.csv";
 
@@ -209,7 +207,25 @@ function product_field_checker ($field_names, $product_validation_fields) {
 
 	}
 
-// $product_code_array = array("Product code");
+
+
+//Require field array
+$product_code_array = array("Product code");
+
+
+//Checks current array if the required fields are in it or throws an error
+			if (!in_array($product_code_array, $field_names)) {
+
+
+				// Error reporting
+				// If an error is found. Return  Error message
+
+				$GLOBALS['error_message'] = "ERROR: ". $product_code_array[0] ." is a required field in CS Cart. Please add it";
+
+
+				$template_part = "invalid_field";
+				die(include ('template_part.php'));
+			}
 	
 
 // Looping through each product array element
@@ -218,12 +234,6 @@ function product_field_checker ($field_names, $product_validation_fields) {
 	// Converting all fields to First character uppper case 
 	$textFormat = ucfirst(strtolower($field_name));
 
-// if (!in_array($product_code_array, $field_names)) {
-// 				$template_part = "invalid_field";
-// 				$GLOBALS['error_message'] = "Product code is compulsory";
-// 				die(include ('template_part.php'));
-
-// } 
 
 		if ($arrayCount > 0) {
 
@@ -248,27 +258,6 @@ function product_field_checker ($field_names, $product_validation_fields) {
 			}
 
 
-/* 
-*****************************************************************
-******************************************************************
-******************************************************************
-******************************************************************
-******************************************************************
-*****************************************************************
-TODO: Validation for Required fields (Product code)
-*****************************************************************
-******************************************************************
-******************************************************************
-******************************************************************
-******************************************************************
-******************************************************************
-******************************************************************
-*/
-
-
-
-
-
 			//Validator to compare field names to the current available CS Cart list
 			if (!in_array($textFormat, $product_validation_fields)) {
 
@@ -284,12 +273,7 @@ TODO: Validation for Required fields (Product code)
 				$template_part = "invalid_field";
 				include ('template_part.php');
 
-}
-
-
-
-
-
+				}
 
 
 		}  //End if search function
@@ -297,7 +281,7 @@ TODO: Validation for Required fields (Product code)
 
 
 
-
+// if the case Sensitivy flag is false. Display the success page
 if ($caseSensitivityErrorChecker == false) {
 
 

@@ -15,36 +15,9 @@ Customize as you like.
 -->
 
 
-
-
-<!DOCTYPE html>
-<html>
-<head>
-	<title>CSV Import Script - Steven Jacskson</title>
-
-
-<!-- Stylesheets -->
-<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-<link rel="stylesheet" type="text/css" href="css/custom.css">
-
-
-</head>
-<body>
-
-
-<div class="container">
-
-<header id="header" class="col-md-12 text-center">
-	<h1>CS Cart CSV Product Field Verification</h1>
-</header><!-- /header -->
-
-
-<div class="clearfix"></div>
-
-<hr>
-
-<div class="col-md-12">
-
+<?php 
+// Include inc/header.php
+include ("inc/header.php"); ?>
 
 	<form action="index.php" method="POST" enctype="multipart/form-data">
 
@@ -66,10 +39,15 @@ require_once("inc/functions.php");
 
 } else {
 
-// Else display nothing
+// Else display Homepage
 	$template_part = "homepage";
 	include ('template_part.php');
 }
+
+
+
+// Include inc/footer.php
+require_once ("inc/footer.php");
 
 
 ?>
