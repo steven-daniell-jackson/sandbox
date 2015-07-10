@@ -17,10 +17,6 @@ Template Part: Homepage
 		</span>
 	</div>
 
-
-require_once ("inc/footer.php");
-
-
 <?php 
 
 require_once ("inc/footer.php");
