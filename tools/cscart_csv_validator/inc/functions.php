@@ -272,6 +272,111 @@ if (!empty($GLOBALS['product_code_array'])){
 }
 
 
+	// Looping through each product array element
+	foreach ($field_names as $field_name) {
+
+		// Converting all fields to First character uppper case 
+		$textFormat = ucfirst(strtolower($field_name));
+
+
+
+
+
+		//Validator to compare field names to the current available CSV validation list
+		if (!in_array($textFormat, $product_validation_fields)) {
+
+			
+				// Error reporting
+				// If an error is found. Return  Error message	on all instances of the error occuring
+			foreach ($field_names as $field_name) {
+
+				if (!in_array($field_name, $product_validation_fields)) {
+					
+					//  Used for fields with all Capitals in the field name
+					// if ($field_name === 'SEO name'){
+					// 	$textFormat = $field_name;
+
+
+					// }  else {
+
+					$warning = "ERROR: \"$field_name\" is not a valid field. <br>";
+
+					$GLOBALS['error_message'] = $GLOBALS['error_message'] . $warning;
+
+
+					//Delete file
+					if (file_exists($GLOBALS['filePath'])) {
+						unlink($GLOBALS['filePath']);
+
+					}	
+
+					// }
+					
+				}
+
+			}
+
+			//Load invalid field template part and kill page
+			$template_part = "invalid_field";
+			die(include ('template_part.php'));	
+
+
+		} else {
+
+
+		// Conditional - Remove Case formatting from any Capital fields
+			// Case Sensitivy checker. Concatanates error message and reports all issues.
+			if ($textFormat != $field_name) {
+
+
+				// Case sensitivity flag
+				$caseSensitivityErrorChecker = true;
+
+				// $GLOBALS['error_message'] = $field_name;
+				$GLOBALS['error_message'] = $GLOBALS['error_message'] . '<span style="color:orange">Case Sensitivy Issue Detected: ' . '&nbsp;"' . $field_name. '" should be "'. $textFormat . '"</span><br/>';
+
+			} 
+
+		}
+
+		
+
+} //End ForEach loop
+
+
+
+
+// if the case Sensitivy flag is false. Display the success page
+if ($caseSensitivityErrorChecker == false) {
+
+
+	// Load template part conditional "success" if everything is successful
+	$template_part = "success";
+	include ('template_part.php');
+
+} else {
+
+
+			//Delete file
+	if (file_exists($GLOBALS['filePath'])) {
+		unlink($GLOBALS['filePath']);
+
+	}	
+
+	// Load template part conditional "case_sensitivity" if everything is successful
+	$template_part = "case_sensitivity";
+	include ('template_part.php');
+}
+
+
+} // End product_field_checker function
+
+/* 
+*******************************************************************************
+OLD CODE
+
+TODO: Modify to include expections like "SEO name"
+*******************************************************************************
 
 	// Looping through each product array element
 	foreach ($field_names as $field_name) {
@@ -345,7 +450,7 @@ if ($caseSensitivityErrorChecker == false) {
 
 } // End product_field_checker function
 
-
+*/
 
 
 ?>
