@@ -7,7 +7,7 @@ Custom Usage
 *****************************************************************
 
 Upload your CSV to the /validator_csv/ directory or change the below global to the path you wish to use.
-Change the Global file name from "/validator_csv/cscart_product_fields.csv" to your /YOuR_directory/YOUR_filename.csv
+Change the Global file name from "/validator_csv/csv_validation_file.csv" to your /YOuR_directory/YOUR_filename.csv
 
 
 To modify the upload directory. 
@@ -96,8 +96,6 @@ function fileValidation (){
 		$create_new_directory = './' . $GLOBALS['upload_Directory'];
 		mkdir($create_new_directory, 0777, true);
 	} 
-
-
 
 
 	// Conditional check: File extenstion
@@ -278,7 +276,6 @@ function product_field_checker ($field_names, $product_validation_fields) {
 
 
 
-
 	// Looping through each product array element
 	foreach ($field_names as $field_name) {
 
@@ -328,10 +325,6 @@ function product_field_checker ($field_names, $product_validation_fields) {
 			die(include ('template_part.php'));	
 
 
-
-
-
-
 		} else {
 
 
@@ -346,18 +339,13 @@ function product_field_checker ($field_names, $product_validation_fields) {
 				// $GLOBALS['error_message'] = $field_name;
 				$GLOBALS['error_message'] = $GLOBALS['error_message'] . '<span style="color:orange">Case Sensitivy Issue Detected: ' . '&nbsp;"' . $field_name. '" should be "'. $textFormat . '"</span><br/>';
 
-
-
-
 			} 
 
 		}
 
-
 		
 
 } //End ForEach loop
-
 
 
 
