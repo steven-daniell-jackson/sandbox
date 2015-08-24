@@ -1,0 +1,5 @@
+search.tpl => design\themes\basic\templates\addons\store_locator\views\store_locator
+
+google.js => \js\addons\store_locator
+
+styles.css => \design\themes\basic\css\addons\store_locator

@@ -205,6 +205,9 @@ function fn_change_variant_image(prefix, opt_id, var_id)
     $('[id*=variant_image_' + prefix + '_' + opt_id + '_' + var_id + ']').removeClass('product-variant-image-unselected').addClass('product-variant-image-selected');
 }
 
+
+// Written by Steven Jackson
+
 console.log("loaded");
 $('.show-more').click(function() {
     if($('.show-more-snippet').css('height') != '35px'){
